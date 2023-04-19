@@ -15,6 +15,18 @@
   #content_wrapper {
     padding-top: 90px;
   }
+  .outer_container {
+    padding: 50px;
+    [class*="entryCol-"] {
+      min-height: calc(100vh - 100px);
+    }
+  }
+  .page_appEntry {
+    [class*="entryCol-"] {
+      @include flex(0,0,50%);
+      width: 50%;
+    }
+  }
 }
 // Min-width 768
 @include min(992) {
@@ -82,6 +94,12 @@
   }
   #content_wrapper {
     padding-top: 115px;
+  }
+  .outer_container {
+    padding: 100px;
+    [class*="entryCol-"] {
+      min-height: calc(100vh - 200px);
+    }
   }
 }
 // Min-width 1600

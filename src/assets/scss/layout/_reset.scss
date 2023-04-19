@@ -347,7 +347,7 @@ html {
   text-size-adjust: 100%;
 }
 body {
-  background-color: var(--global--color-grey) !important;
+  background-color: #fefefe !important;
   color: var(--global--color-black);
   font-family: var(--global--font-family-secondary);
   @include fontSize(14px);

@@ -2480,7 +2480,7 @@ html {
 }
 
 body {
-  background-color: var(--global--color-grey) !important;
+  background-color: #fefefe !important;
   color: var(--global--color-black);
   font-family: var(--global--font-family-secondary);
   font-size: 14px !important;
@@ -2995,6 +2995,14 @@ picture:after {
 
 .bg-primary {
   background-color: var(--global--color-primary);
+}
+
+.bg-white {
+  background-color: var(--global--color-white);
+}
+
+.bg-violet {
+  background-color: var(--global--color-violet);
 }
 
 .text-black {
@@ -3857,7 +3865,58 @@ picture:after {
   border: 0;
 }
 
+.outer_container {
+  background-color: var(--global--color-grey);
+  padding: 30px;
+  position: relative;
+  width: 100vw;
+}
+.outer_container .inner_container {
+  position: relative;
+  width: 100%;
+}
+.outer_container [class*=entryCol-] {
+  min-height: calc(100vh - 60px);
+}
+
+.page_appEntry {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.page_appEntry [class*=entryCol-] {
+  width: 100%;
+}
+.page_appEntry [class*=entryCol-] .head_logo {
+  border-bottom: 1px solid var(--global--color-border);
+  padding: 14px 20px !important;
+}
+.page_appEntry [class*=entryCol-] .head_logo .logo {
+  line-height: 0;
+}
+.page_appEntry [class*=entryCol-] .head_logo svg {
+  fill: var(--global--color-violet);
+  height: 30px;
+}
+.page_appEntry .entryCol-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page_appEntry .entryCol-left .head_logo {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .entry-wrapper {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 600px;
   width: 100%;
 }
@@ -3925,6 +3984,16 @@ picture:after {
   #content_wrapper {
     padding-top: 90px;
   }
+  .outer_container {
+    padding: 50px;
+  }
+  .outer_container [class*=entryCol-] {
+    min-height: calc(100vh - 100px);
+  }
+  .page_appEntry [class*=entryCol-] {
+    flex: 0 0 50%;
+    width: 50%;
+  }
 }
 @media (min-width: 1200px) {
   .desktop-clear {
@@ -3964,6 +4033,12 @@ picture:after {
   }
   #content_wrapper {
     padding-top: 115px;
+  }
+  .outer_container {
+    padding: 100px;
+  }
+  .outer_container [class*=entryCol-] {
+    min-height: calc(100vh - 200px);
   }
 }
 @media (min-width: 1850px) {

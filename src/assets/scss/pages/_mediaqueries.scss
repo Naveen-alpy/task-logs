@@ -1,0 +1,126 @@
+@include min(575) {
+  .mobLand-clear {
+    clear: both;
+    display: block;
+  }
+}
+// Min-width 575
+@include min-max(575, 767) {
+}
+@include min(768) {
+  .ipad-clear {
+    clear: both;
+    display: block;
+  }
+  #content_wrapper {
+    padding-top: 90px;
+  }
+}
+// Min-width 768
+@include min(992) {
+}
+// Min-width 992
+@include min-max(768, 1199) {
+}
+// Min-width 768  and Max-width 1199
+@include min-max(992, 1199) {
+}
+@include min(1200) {
+  .desktop-clear {
+    clear: both;
+    display: block;
+  }
+  #content_wrapper {
+    padding-top: 89px;
+  }
+}
+// Min-width 1200
+@include min-max(1200, 1599) {
+}
+// 1200 1599
+@include min(1600) {
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+  blockquote {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 30px;
+    }
+  }
+  ul,
+  ol {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 30px;
+    }
+  }
+  #content_wrapper {
+    padding-top: 115px;
+  }
+}
+// Min-width 1600
+@include min(1850) {
+  #content_wrapper {
+    padding-top: 115px;
+  }
+}
+// Min-width 1850
+@include max(1599) {
+}
+@include max(1199) {
+}
+// max width 1199px
+@include max(991) {
+}
+// Max-width 991
+@include max(767) {
+}
+// Max-width 767
+@include max(574) {
+}
+// Max-width 574
+// Browser Hack for Firefox Only
+@-moz-document url-prefix() {
+  @include placeholder {
+    height: 40px;
+    line-height: 1;
+    @include min(1600) {
+      height: 50px;
+    }
+  }
+  textarea {
+    @include placeholder {
+      line-height: 1;
+    }
+  }
+  .form-elements {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+}

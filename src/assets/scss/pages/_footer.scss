@@ -1,0 +1,14 @@
+.project_footer {
+  background-color: var(--global--color-black);
+  color: var(--global--color-white);
+  @include fontSize(15px);
+  font-weight: $fw-400;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.no-styled-footer {
+  @include fontSize(15px);
+  font-weight: $fw-500;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}

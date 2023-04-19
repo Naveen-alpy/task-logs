@@ -1,0 +1,94 @@
+/* ===========================
+			Banner Section
+=========================== */
+.project_banner {
+  overflow: hidden;
+  position: relative;
+  .slider-object {
+    bottom: 0;
+    height: 100%;
+    left: 1%;
+    line-height: 0;
+    max-height: 799px;
+    max-width: 994px;
+    position: absolute;
+    z-index: 3;
+  }
+  .slider-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .container {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 5;
+  }
+  .banner-text-container {
+    &>* {
+      margin-top: 10px;
+    }
+  }
+  .text_main {
+    @include fontSize(26px);
+    line-height: 1.1;
+  }
+  .tab_navs {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    ul {
+      margin-left: -10px;
+      margin-right: -10px;
+      li {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+        &:not(:last-child) {
+          &:before {
+            background-color: var(--global--color-white);
+            content: '';
+            height: 24px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            @include transformY(-50%);
+            width: 1px;
+          }
+        }
+      }
+    }
+    .tab_btn {
+      background-color: transparent;
+      color: var(--global--color-white);
+      @include fontSize(18px);
+      font-weight: $fw-500;
+      line-height: 1;
+      padding: 0 5px 0 0;
+      .icon-wrapper {
+        background-color: var(--global--color-primary);
+        @include border-radius(50%);
+        height: 30px;
+        width: 30px;
+        svg {
+          fill: var(--global--color-white);
+          height: 18px;
+        }
+      }
+      .title {
+        padding-left: 10px;
+      }
+      &:hover {
+        color: var(--global--color-primary);
+      }
+    }
+  }
+}

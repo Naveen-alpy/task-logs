@@ -1,0 +1,56 @@
+:root {
+  // Font Family
+  --font-montserat: 'Montserrat', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  /* Font Family */
+  --global--font-family-primary: var(
+    --font-montserat,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif
+  );
+  --global--font-family-secondary: var(
+    --font-raleway,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif
+  );
+
+  // Colors
+  --global--color-black: #000;
+  --global--color-white: #fff;
+  --global--color-red: #ff0100;
+  --global--color-grey: #d5dbe2;
+  --global--color-oil-black: #0d0d0d;
+  --global--color-blue: #1cbcfd;
+  --global--color-violet: #5a22b3;
+  --global--color-primary: var(--global--color-blue);
+  --global--color-secondary: var(--global--color-black);
+  --global--color-box-bg: #e2e2e2;
+  --global--color-border: #d1d1d1;
+  --global--color-base-text: var(--global--color-white);
+
+  // Elevation
+  --global--shadow-black-20: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  --global--shadow-black-10: 0px 1px 10px rgba(0, 0, 0, 0.1);
+
+  // Opacity/Transparency
+  --global--opacity-black-20: rgba(0, 0, 0, 0.2);
+  --global--opacity-black-50: rgba(0, 0, 0, 0.5);
+  --global--opacity-black-80: rgba(0, 0, 0, 0.8);
+  --global--opacity-white-30: rgba(255, 255, 255, 0.3);
+  --global--opacity-white-50: rgba(255, 255, 255, 0.5);
+}
+$primary-color:     #1cbcfd !default;

@@ -1,0 +1,197 @@
+.btnsNew {
+  @include align-items(center);
+  background-color: transparent !important;
+  border: 2px solid var(--global--color-white);
+  @include border-radius(0 !important);
+  box-shadow: none;
+  cursor: pointer;
+  color: var(--global--color-white) !important;
+  @include flexbox-display(inline-flex);
+  font-weight: $fw-500;
+  @include justify-content(center);
+  line-height: 1;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  @include transition(all, ease, 0.4s);
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    box-shadow: none;
+    outline: none;
+  }
+  &:hover {
+    background-color: var(--global--color-white) !important;
+    border-color: var(--global--color-white);
+    color: var(--global--color-primary) !important;
+  }
+  &:focus {
+    color: var(--global--color-primary);
+  }
+  &:visited {
+    color: var(--global--color-primary);
+  }
+}
+.menu-btn {
+  @extend .btnsNew;
+  @include fontSize(15px);
+  height: 42px;
+}
+.project-btn-wrap {
+  @include flex-align(vCenter);
+  margin-left: -5px;
+  margin-right: -5px;
+  & > * {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .project-btn {
+    @extend .btnsNew;
+    @include fontSize(15px);
+    height: 42px;
+    &.size-sm {
+      @include fontSize(14px);
+      height: 40px;
+    }
+    &.size-lg {
+      @include fontSize(17px);
+      height: 44px;
+    }
+    &.btn-black {
+      border-color: var(--global--color-black);
+      color: var(--global--color-black) !important;
+    }
+    &.bg-primary {
+      background-color: var(--global--color-primary) !important;
+      border-color: var(--global--color-primary);
+      &:hover {
+        background-color: transparent !important;
+        border-color: var(--global--color-primary);
+      }
+    }
+    &.hvr_bg_white {
+      &:hover {
+        background-color: var(--global--color-white) !important;
+      }
+    }
+    @include min(768) {
+      @include fontSize(16px);
+      height: 46px;
+      padding-left: 20px;
+      padding-right: 20px;
+      &.size-sm {
+        @include fontSize(14px);
+        height: 44px;
+      }
+      &.size-lg {
+        @include fontSize(20px);
+        height: 50px;
+      }
+    }
+    @include min(1200) {
+      border-width: 1px;
+      @include fontSize(16px);
+      height: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      &.size-sm {
+        @include fontSize(14px);
+        height: 34px;
+      }
+      &.size-lg {
+        @include fontSize(18px);
+        height: 42px;
+      }
+    }
+    @include min(1600) {
+      border-width: 2px;
+      @include fontSize(23px);
+      height: 62px;
+      padding-left: 35px;
+      padding-right: 35px;
+      &.size-sm {
+        @include fontSize(17px);
+        height: 50px;
+      }
+      &.size-lg {
+        @include fontSize(30px);
+        height: 80px;
+      }
+    }
+    @include min(1850) {
+      @include fontSize(26px);
+      height: 73px;
+      padding-left: 40px;
+      padding-right: 40px;
+      &.size-sm {
+        @include fontSize(18px);
+        height: 55px;
+      }
+      &.size-lg {
+        @include fontSize(33px);
+        height: 90px;
+      }
+    }
+  }
+  &.full-width {
+    width: 100%;
+    .project-btn {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+    }
+  }
+}
+/*input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button[type="submit"] {}*/
+#back-to-top {
+  @include align-items(center);
+  background-color: var(--global--color-primary);
+  bottom: 30%;
+  color: var(--global--color-white);
+  @include flexbox-display(inline-flex);
+  flex-direction: column;
+  @include justify-content(center);
+  height: 50px;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 15px;
+  text-align: center;
+  text-indent: -99999px;
+  @include transition(all, ease, 0.5s);
+  @include transformY(20px);
+  width: 45px;
+  z-index: 99;
+  span {
+    border-left: 2px solid var(--global--color-white);
+    border-top: 2px solid var(--global--color-white);
+    display: inline-block;
+    height: 14px;
+    margin-top: 8px;
+    @include rotate(45deg);
+    width: 14px;
+  }
+  &.visible {
+    opacity: 1;
+    @include transformY(0);
+  }
+  @include min(1600) {
+    height: 50px;
+    width: 45px;
+    span {
+    }
+  }
+  @include max(1199) {
+    display: none;
+  }
+}

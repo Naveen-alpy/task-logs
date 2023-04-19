@@ -1,0 +1,178 @@
+// Heading Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--global--color-black);
+  display: block;
+  font-family: var(--global--font-family-secondary);
+  font-weight: $fw-600;
+  line-height: 1.2;
+  margin: 0 0 15px;
+  padding: 0;
+  text-transform: none;
+  a {
+    background-color: transparent;
+    color: inherit;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none !important;
+    &:hover {
+      color: var(--global--color-primary);
+    }
+  }
+  & + p,
+  & + ul,
+  & + ol {
+    margin-top: 20px;
+  }
+  & + blockquote {
+    margin-top: 20px !important;
+  }
+  @include max(1599) {
+    margin-bottom: 10px;
+    & + p,
+    & + ul,
+    & + ol {
+      margin-top: 10px;
+    }
+    & + blockquote {
+      margin-top: 10px !important;
+    }
+  }
+  @include max(767) {
+    margin-bottom: 7px;
+  }
+}
+h1,
+.h1 {
+  @include fontSize(22px);
+  @include min(768) {
+    @include fontSize(24px);
+  }
+  @include min(1200) {
+    @include fontSize(22px);
+  }
+  @include min(1600) {
+    @include fontSize(25px);
+  }
+  @include min(1850) {
+    @include fontSize(30px);
+  }
+}
+h2 {
+  @include fontSize(20px);
+  @include min(768) {
+    @include fontSize(22px);
+  }
+  @include min(1200) {
+    @include fontSize(20px);
+  }
+  @include min(1600) {
+    @include fontSize(22px);
+  }
+  @include min(1850) {
+    @include fontSize(25px);
+  }
+}
+h3,
+h4 {
+  @include fontSize(18px);
+  @include min(768) {
+    @include fontSize(20px);
+  }
+  @include min(1200) {
+    @include fontSize(18px);
+  }
+  @include min(1600) {
+    @include fontSize(20px);
+  }
+  @include min(1850) {
+    @include fontSize(23px);
+  }
+}
+h5,
+h6 {
+  @include fontSize(17px);
+  @include min(768) {
+    @include fontSize(19px);
+  }
+  @include min(1200) {
+    @include fontSize(17px);
+  }
+  @include min(1600) {
+    @include fontSize(20px);
+  }
+  @include min(1850) {
+    @include fontSize(22px);
+  }
+}
+.project_heading_widget {
+  padding-bottom: 15px;
+  .heading_title {
+    font-family: var(--global--font-family-secondary);
+    @include fontSize(20px);
+    font-weight: $fw-600;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    &.size-sm {
+      @include fontSize(18px);
+    }
+    &.size-lg {
+      @include fontSize(22px);
+    }
+  }
+  @include min(768) {
+    padding-bottom: 20px;
+    .heading_title {
+      @include fontSize(23px);
+      &.size-sm {
+        @include fontSize(20px);
+      }
+      &.size-lg {
+        @include fontSize(25px);
+      }
+    }
+  }
+  @include min(1200) {
+    padding-bottom: 20px;
+    .heading_title {
+      @include fontSize(22px);
+      &.size-sm {
+        @include fontSize(20px);
+      }
+      &.size-lg {
+        @include fontSize(25px);
+      }
+    }
+  }
+  @include min(1600) {
+    padding-bottom: 20px;
+    .heading_title {
+      @include fontSize(25px);
+      &.size-sm {
+        @include fontSize(22px);
+      }
+      &.size-lg {
+        @include fontSize(28px);
+      }
+    }
+  }
+  @include min(1850) {
+    padding-bottom: 30px;
+    .heading_title {
+      @include fontSize(30px);
+      &.size-sm {
+        @include fontSize(27px);
+      }
+      &.size-lg {
+        @include fontSize(33px);
+      }
+    }
+  }
+}

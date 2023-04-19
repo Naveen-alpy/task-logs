@@ -1,0 +1,33 @@
+.entry-wrapper {
+  max-width: 600px;
+  width: 100%;
+}
+.tab_button_group {
+  margin-bottom: 0 !important;
+  .tab_button {
+    background-color: var(--global--color-box-bg);
+    border: 2px solid var(--global--color-white);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--global--color-black);
+    @include fontSize(15px);
+    font-weight: $fw-500;
+    height: 46px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-transform: uppercase;
+  }
+  .active {
+    .tab_button {
+      background-color: var(--global--color-white);
+      border-color: var(--global--color-primary);
+      border-bottom-color: var(--global--color-white);
+      color: var(--global--color-primary);
+    }
+  }
+}
+.tab_container_wrap {
+  background-color: var(--global--color-white);
+  @include box-shadow(0,1px,15px,rgba($black,0.1));
+  padding: 30px;
+}

@@ -1,0 +1,62 @@
+/* ===========================
+			Header Section
+=========================== */
+[class*="project_logo_"] {
+  @include transition(all,ease,0.3s);
+  svg {
+    fill: var(--global--color-black);
+    height: 50px;
+  }
+}
+.project_header {
+  background-color: var(--global--color-black);
+  color: var(--global--color-white);
+  left: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  [class*="project_logo_"] {
+    svg {
+      fill: var(--global--color-white);
+    }
+  }
+  .header_right {
+    @include align-items(center);
+    @include flexbox();
+    @include justify-content(end);
+    margin-left: auto;
+  }
+  .main_menu {
+    ul {
+      @include align-items(center);
+      @include flexbox();
+      li {
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+    a {
+      background-color: transparent;
+      @include border-radius(3px);
+      color: var(--global--color-primary);
+      @include fontSize(13px);
+      font-weight: $fw-300;
+      letter-spacing: 1.5px;
+      line-height: 1;
+      padding: 5px 7px;
+      text-transform: uppercase;
+      &:hover {
+        background-color: rgba($primary-color,0.5);
+        color: var(--global--color-white);
+      }
+    }
+  }
+}
+.no-styled-header {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}

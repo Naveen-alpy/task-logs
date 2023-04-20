@@ -347,8 +347,8 @@ html {
   text-size-adjust: 100%;
 }
 body {
-  background-color: #fefefe !important;
-  color: var(--global--color-black);
+  background-color: var(--global--color-grey) !important;
+  color: var(--global--color-base-text);
   font-family: var(--global--font-family-secondary);
   @include fontSize(14px);
   font-weight: $fw-400;
@@ -362,10 +362,7 @@ body {
     @include fontSize(14px);
   }
   @include min(1600) {
-    @include fontSize(16px);
-  }
-  @include min(1850) {
-    @include fontSize(18px);
+    @include fontSize(15px);
   }
   p,
   li {

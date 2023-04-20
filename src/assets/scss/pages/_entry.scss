@@ -2,13 +2,13 @@
   background-color: var(--global--color-grey);
   padding: 30px;
   position: relative;
-  width: 100vw;
+  width: 100%;
   .inner_container {
     position: relative;
     width: 100%;
   }
   [class*="entryCol-"] {
-    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
   }
 }
 .page_appEntry {
@@ -31,6 +31,7 @@
   }
   .entryCol-left {
     @include flex-align(vhCenter);
+    padding-top: 70px;
     position: relative;
     .head_logo {
       left: 0;
@@ -72,6 +73,52 @@
 }
 .tab_container_wrap {
   background-color: var(--global--color-white);
-  @include box-shadow(0,1px,15px,rgba($black,0.1));
   padding: 30px;
+  @include min(768) {
+    .login-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+    }
+  }
+  .choosedId {
+    color: var(--global--color-text-off);
+    font-weight: $fw-500;
+    margin-top: -8px !important;
+    span {
+      color: var(--global--color-base-text);
+      font-style: italic;
+    }
+    @include max(767) {
+      margin-top: -3px !important;
+    }
+  }
+}
+.entry_form_wrap {
+  .tw-row {
+    --bs-gutter-xs: 14px;
+    margin-left: calc(-0.5 * var(--bs-gutter-xs));
+    margin-right: calc(-0.5 * var(--bs-gutter-xs));
+    &>* {
+      padding-left: calc(var(--bs-gutter-xs) * 0.5);
+      padding-right: calc(var(--bs-gutter-xs) * 0.5);
+      @include max(767) {
+        margin-bottom: calc(var(--bs-gutter-xs) * 0.7);
+        margin-top: calc(var(--bs-gutter-xs) * 0.7);
+      }
+    }
+  }
+  .entry_note {
+    @include fontSize(12px);
+    font-weight: $fw-300;
+    .link {
+      background-color: transparent;
+      color: var(--global--color-primary);
+      font-weight: $fw-600;
+      margin-top: 12px;
+      &:hover {
+        color: var(--global--color-black);
+      }
+    }
+  }
 }

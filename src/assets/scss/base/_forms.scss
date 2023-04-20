@@ -14,29 +14,23 @@ form {
   @include clearfix();
 }
 .fm-elem-mix {
-  color: var(--global--color-black);
+  color: var(--global--color-base-text);
   font-family: var(--global--font-family-primary);
   font-weight: $fw-300;
   line-height: 1;
 }
 @include placeholder {
-  color: var(--global--color-black);
+  color: var(--global--color-base-text);
   font-family: var(--global--font-family-primary);
   @include fontSize(14px);
   font-weight: $fw-300;
   line-height: 1;
   opacity: 1;
-  @include min(768) {
-    @include fontSize(15px);
-  }
   @include min(1200) {
     @include fontSize(14px);
   }
   @include min(1600) {
-    @include fontSize(16px);
-  }
-  @include min(1850) {
-    @include fontSize(18px);
+    @include fontSize(15px);
   }
 }
 .label,
@@ -44,17 +38,11 @@ form {
 textarea,
 select {
   @include fontSize(14px);
-  @include min(768) {
-    @include fontSize(15px);
-  }
   @include min(1200) {
     @include fontSize(14px);
   }
   @include min(1600) {
-    @include fontSize(16px);
-  }
-  @include min(1850) {
-    @include fontSize(18px);
+    @include fontSize(15px);
   }
 }
 .label {
@@ -67,24 +55,29 @@ select {
   appearance: none;
   -webkit-appearance: none;
   background-color: transparent;
-  border: 0;
-  @include border-radius(0);
-  color: var(--global--color-black);
+  border: 1px solid var(--global--color-border);
+  @include border-radius(6px);
+  color: var(--global--color-base-text);
   display: block;
   outline: none !important;
   outline-offset: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 14px;
+  padding-right: 14px;
   text-transform: none;
   width: 100%;
   @extend .fm-elem-mix;
+  @include min(1600) {
+    @include border-radius(10px);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .form-elements,
 select,
 textarea {
   height: 40px;
   @include min(1600) {
-    height: 50px;
+    height: 44px;
   }
 }
 textarea {
@@ -134,8 +127,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #fff;
 }
 .input-holder {
-  border-bottom: 1px solid var(--global--color-black);
-  padding-left: 30px;
   position: relative;
   .icon_wrapper {
     @include align-items(center);
@@ -479,6 +470,68 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       svg {
         fill: var(--global--color-white);
       }
+    }
+  }
+}
+.entry_form_wrap {
+  .input-holder {
+    margin-bottom: 20px;
+    padding: 0;
+    position: relative;
+    .placeholder_lab {
+      background-color: var(--global--color-white);
+      color: var(--global--color-text-off);
+      @include fontSize(11px);
+      font-weight: $fw-500;
+      left: 10px;
+      line-height: 1;
+      padding: 2px 5px;
+      position: absolute;
+      top: -8px;
+      width: auto;
+      z-index: 1;
+    }
+    &.log_mail {
+      padding-left: 14px;
+      padding-right: 14px;
+      .mailExt {
+        background-color: var(--global--color-white);
+        color: var(--global--color-text-off);
+        @include fontSize(10px);
+        font-style: italic;
+        font-weight: $fw-500;
+        line-height: 1;
+        margin-left: auto;
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+      .input_field {
+        border: 0;
+        flex-grow: 1;
+        padding-right: 7px;
+      }
+      @include min(1600) {
+        padding-left: 20px;
+        padding-right: 20px;
+        .mailExt {
+          @include fontSize(12px);
+        }
+      }
+    }
+  }
+  @include min(1600) {
+    .input-holder {
+      margin-bottom: 30px;
+      .placeholder_lab {
+        @include fontSize(12px);
+        left: 15px;
+        padding: 3px 8px;
+      }
+    }
+  }
+  .tw-row {
+    .input-holder {
+      margin-bottom: 0;
     }
   }
 }

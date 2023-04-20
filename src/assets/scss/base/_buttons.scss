@@ -1,8 +1,8 @@
 .btnsNew {
   @include align-items(center);
-  background-color: transparent !important;
-  border: 2px solid var(--global--color-white);
-  @include border-radius(0 !important);
+  background-color: var(--global--color-violet) !important;
+  border: 0;
+  @include border-radius(10px !important);
   box-shadow: none;
   cursor: pointer;
   color: var(--global--color-white) !important;
@@ -16,7 +16,7 @@
   position: relative;
   text-align: center;
   text-decoration: none !important;
-  text-transform: uppercase;
+  text-transform: none;
   @include transition(all, ease, 0.4s);
   &:active,
   &:focus,
@@ -26,15 +26,13 @@
     outline: none;
   }
   &:hover {
-    background-color: var(--global--color-white) !important;
-    border-color: var(--global--color-white);
-    color: var(--global--color-primary) !important;
+    background-color: var(--global--color-primary) !important;
   }
   &:focus {
-    color: var(--global--color-primary);
+    color: var(--global--color-white);
   }
   &:visited {
-    color: var(--global--color-primary);
+    color: var(--global--color-white);
   }
 }
 .menu-btn {
@@ -52,16 +50,8 @@
   }
   .project-btn {
     @extend .btnsNew;
-    @include fontSize(15px);
-    height: 42px;
-    &.size-sm {
-      @include fontSize(14px);
-      height: 40px;
-    }
-    &.size-lg {
-      @include fontSize(17px);
-      height: 44px;
-    }
+    @include fontSize(12px);
+    height: 40px;
     &.btn-black {
       border-color: var(--global--color-black);
       color: var(--global--color-black) !important;
@@ -80,62 +70,24 @@
       }
     }
     @include min(768) {
-      @include fontSize(16px);
-      height: 46px;
+      @include fontSize(13px);
+      height: 42px;
       padding-left: 20px;
       padding-right: 20px;
-      &.size-sm {
-        @include fontSize(14px);
-        height: 44px;
-      }
-      &.size-lg {
-        @include fontSize(20px);
-        height: 50px;
-      }
     }
     @include min(1200) {
       border-width: 1px;
-      @include fontSize(16px);
+      @include fontSize(13px);
       height: 40px;
       padding-left: 20px;
       padding-right: 20px;
-      &.size-sm {
-        @include fontSize(14px);
-        height: 34px;
-      }
-      &.size-lg {
-        @include fontSize(18px);
-        height: 42px;
-      }
     }
     @include min(1600) {
       border-width: 2px;
-      @include fontSize(23px);
-      height: 62px;
-      padding-left: 35px;
-      padding-right: 35px;
-      &.size-sm {
-        @include fontSize(17px);
-        height: 50px;
-      }
-      &.size-lg {
-        @include fontSize(30px);
-        height: 80px;
-      }
-    }
-    @include min(1850) {
-      @include fontSize(26px);
-      height: 73px;
-      padding-left: 40px;
-      padding-right: 40px;
-      &.size-sm {
-        @include fontSize(18px);
-        height: 55px;
-      }
-      &.size-lg {
-        @include fontSize(33px);
-        height: 90px;
-      }
+      @include fontSize(16px);
+      height: 44px;
+      padding-left: 25px;
+      padding-right: 25px;
     }
   }
   &.full-width {

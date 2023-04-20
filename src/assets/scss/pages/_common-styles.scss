@@ -294,6 +294,10 @@
       margin-top: calc(var(--bs-gutter-x) * 0.4);
     }
   }
+  .project_heading_widget {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   .auto-width {
     flex: 0 0 auto;
     width: auto;

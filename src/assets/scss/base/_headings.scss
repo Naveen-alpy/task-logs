@@ -5,7 +5,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--global--color-black);
+  color: var(--global--color-base-text);
   display: block;
   font-family: var(--global--font-family-secondary);
   font-weight: $fw-600;
@@ -112,6 +112,9 @@ h6 {
 }
 .project_heading_widget {
   padding-bottom: 15px;
+  small {
+    font-weight: $fw-500;
+  }
   .heading_title {
     font-family: var(--global--font-family-secondary);
     @include fontSize(20px);
@@ -120,6 +123,9 @@ h6 {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+    &.size-xs {
+      @include fontSize(14px);
+    }
     &.size-sm {
       @include fontSize(18px);
     }
@@ -131,6 +137,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(23px);
+      &.size-xs {
+        @include fontSize(16px);
+      }
       &.size-sm {
         @include fontSize(20px);
       }
@@ -143,6 +152,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(22px);
+      &.size-xs {
+        @include fontSize(16px);
+      }
       &.size-sm {
         @include fontSize(20px);
       }
@@ -155,6 +167,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(25px);
+      &.size-xs {
+        @include fontSize(18px);
+      }
       &.size-sm {
         @include fontSize(22px);
       }
@@ -167,6 +182,9 @@ h6 {
     padding-bottom: 30px;
     .heading_title {
       @include fontSize(30px);
+      &.size-xs {
+        @include fontSize(20px);
+      }
       &.size-sm {
         @include fontSize(27px);
       }

@@ -23,7 +23,7 @@ const LoginRegister = () => {
             <li className={activeTab === 'tab1' ? 'active' : ''} onClick={handleTab1}><button type="button" className="tab_button">Login</button></li>
             <li className={activeTab === 'tab2' ? 'active' : ''} onClick={handleTab2}><button type="button" className="tab_button">Register</button></li>
           </ul>
-          <div className="tab_container_wrap">
+          <div className="tab_container_wrap entry_form_wrap">
             {activeTab === "tab1" ? <EntryLogin /> : <EntryRegister />}
           </div>
         </section>

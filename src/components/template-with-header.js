@@ -7,9 +7,9 @@ export const TemplateWithHeader = () => {
     <>
       <Header />
       <section id="content_wrapper">
-        <Outlet />
+        <div className="container_wrapper"><Outlet /></div>
       </section>
-      <Footer />
+      <div className="has_sidebar"><Footer /></div>      
     </>
   )
 }

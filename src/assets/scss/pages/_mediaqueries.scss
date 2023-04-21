@@ -109,7 +109,7 @@
     }
   }
   #content_wrapper {
-    padding-top: 115px;
+    padding-top: 60px;
   }
   .outer_container {
     padding: 100px;
@@ -121,7 +121,7 @@
 // Min-width 1600
 @include min(1850) {
   #content_wrapper {
-    padding-top: 115px;
+    padding-top: 60px;
   }
 }
 // Min-width 1850

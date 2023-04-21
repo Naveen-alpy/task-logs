@@ -1,6 +1,6 @@
 .project_footer {
-  background-color: var(--global--color-black);
-  color: var(--global--color-white);
+  background-color: transparent;
+  color: var(--global--color-base-text);
   @include fontSize(15px);
   font-weight: $fw-400;
   padding-bottom: 15px;
@@ -11,4 +11,9 @@
   font-weight: $fw-500;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+.has_sidebar {
+  .project_footer {
+    padding-left: 350px;
+  }
 }

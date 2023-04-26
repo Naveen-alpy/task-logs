@@ -1,0 +1,21 @@
+.breadcrumb {
+  @include flex-align(vCenter);
+  color: var(--global--color-primary);
+  @include fontSize(14px);
+  font-weight: $fw-500;
+  line-height: 1;
+  a {
+    @include align-items(center);
+    color: var(--global--color-base-text);
+    display: flex;
+    line-height: 1;
+    &:after {
+      content: '/';
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    &:hover {
+      color: var(--global--color-primary);
+    }
+  }
+}

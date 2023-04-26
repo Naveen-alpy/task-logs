@@ -1,6 +1,6 @@
 const EntryRegister = () => {
   return (
-    <section className="register-container">
+    <>
       <header className="project_heading_widget">
         <h1 className="heading_title tt-none">Register Now</h1>
         <small>Welcome to TaskLogs, please drop your values below to create an APP Account</small>
@@ -123,8 +123,7 @@ const EntryRegister = () => {
           <button type="submit" className="project-btn">Register Now</button>
         </div>
       </form>
-      <p className="center entry_note">Already have an account? <button className="link">Login</button></p>
-    </section>
+    </>
   )
 }
 

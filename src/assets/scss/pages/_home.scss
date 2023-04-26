@@ -2,27 +2,125 @@
 		Top Form
 =========================== */
 .main_body_wrapper {
-	height: calc(100vh - 111px);
-	padding: 30px;
+	min-height: 100vh ;
+	padding: 60px 10px 0 0;
 	position: relative;
+	[class*="project_logo_"] {
+    svg {
+      fill: var(--global--color-white);
+    }
+  }
 	.main_sidebar {
 		background-color: var(--global--color-black);
 		color: var(--global--color-white);
-		@include flex(0,0,300px);
-		padding: 20px;
-		width: 300px;
+		@include flex(0,0,60px);
+		padding: 5px;
+		width: 60px;
 	}
 	.main_container {
-		background-color: var(--global--color-white);
 		flex-grow: 1;
 	}
+	.project_footer {
+		width: 100%;
+	}
 	&.with_sidebar {
-		padding-left: 350px;
+		@include flexbox();
+		flex-flow: column;
+		padding-left: 70px;
+		.project_header {
+			left: 60px;
+			width: calc(100% - 60px);
+		}
 		.main_sidebar {
-			height: calc(100vh - 58px);
+			height: 100vh;
 			left: 0;
 			position: fixed;
-			top: 58px;
+			top: 0;
+		}
+	}
+}
+.header_strip {
+	.project_heading_widget {
+		padding-bottom: 0;
+	}
+	.breadcrumb {
+		padding-left: 50px;
+	}
+}
+.white-box {
+	.project_heading_widget {
+		padding-bottom: 10px;
+		svg {
+			margin-right: 10px;
+		}
+	}
+}
+.tabs_list {
+	button {
+		background-color: transparent;
+		border-bottom: 2px double var(--global--color-grey);
+		padding: 10px 15px;
+		.project_heading_widget {
+			color: var(--global--color-grey);
+		}
+	}
+	.project_heading_widget {
+		padding-bottom: 0;
+	}
+	.active_tab {
+		button {
+			border-bottom-color: var(--global--color-base-text);
+			.project_heading_widget {
+				color: var(--global--color-base-text);
+			}
+		}
+	}
+}
+.tasks_sorts {
+	display: flex;
+	margin-left: calc(-0.5 * var(--tw-gutter-space));
+	margin-right: calc(-0.5 * var(--tw-gutter-space));
+	&>* {
+		flex: 1;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		padding-left: calc(0.5 * var(--tw-gutter-space));
+		padding-right: calc(0.5 * var(--tw-gutter-space));
+		position: relative;
+	}
+	li {
+		&:before {
+			background-color: var(--global--color-grey);
+			content: '';
+			height: 80%;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			@include transformY(-50%);
+			width: 1px;
+		}
+	}
+	.count {
+		@include fontSize(20px);
+		font-weight: $fw-600;
+		line-height: 1;
+		padding-right: 8px;
+	}
+	.tags {
+		font-weight: $fw-500;
+	}
+	.tasks {
+		clear: both;
+		color: var(--global--color-text-off);
+		display: block;
+		@include fontSize(12px);
+		font-weight: $fw-400;
+	}
+	.sort_grid {
+		@include align-items(end);
+		@include flexbox();
+		.tasks {
+			width: 100%;
 		}
 	}
 }

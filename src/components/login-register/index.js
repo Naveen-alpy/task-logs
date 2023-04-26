@@ -16,15 +16,15 @@ const LoginRegister = () => {
     <main className="page_appEntry dFlex">
       <div className="entryCol-left bg-white">
         <header className="head_logo">
-          <ProjectLogo IconLogo={false} link={false} />
+          <ProjectLogo IconLogo={false} link={true} linkTo="/" />
         </header>
         <section className="entry-wrapper">
-          <ul className="tab_button_group vhCenter">
+          {/* <ul className="tab_button_group vhCenter">
             <li className={activeTab === 'tab1' ? 'active' : ''} onClick={handleTab1}><button type="button" className="tab_button">Login</button></li>
             <li className={activeTab === 'tab2' ? 'active' : ''} onClick={handleTab2}><button type="button" className="tab_button">Register</button></li>
-          </ul>
+          </ul> */}
           <div className="tab_container_wrap entry_form_wrap">
-            {activeTab === "tab1" ? <EntryLogin /> : <EntryRegister />}
+            {activeTab === "tab1" ? <section className="login-container"><EntryLogin /><p className="center entry_note">Don't have an account? <button className="link" onClick={handleTab2}>Create an account</button></p></section> : <section className="register-container"><EntryRegister /><p className="center entry_note">Already have an account? <button className="link" onClick={handleTab1}>Login</button></p></section>}
           </div>
         </section>
       </div>

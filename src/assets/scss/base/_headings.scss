@@ -111,11 +111,13 @@ h6 {
   }
 }
 .project_heading_widget {
+  color: var(--global--color-base-text);
   padding-bottom: 15px;
   small {
     font-weight: $fw-500;
   }
   .heading_title {
+    color: inherit;
     font-family: var(--global--font-family-secondary);
     @include fontSize(20px);
     font-weight: $fw-600;
@@ -123,6 +125,9 @@ h6 {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+    &.size-xxs {
+      @include fontSize(13px);
+    }
     &.size-xs {
       @include fontSize(14px);
     }
@@ -137,6 +142,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(23px);
+      &.size-xxs {
+        @include fontSize(14px);
+      }
       &.size-xs {
         @include fontSize(16px);
       }
@@ -152,6 +160,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(22px);
+      &.size-xxs {
+        @include fontSize(14px);
+      }
       &.size-xs {
         @include fontSize(16px);
       }
@@ -167,6 +178,9 @@ h6 {
     padding-bottom: 20px;
     .heading_title {
       @include fontSize(25px);
+      &.size-xxs {
+        @include fontSize(18px);
+      }
       &.size-xs {
         @include fontSize(18px);
       }

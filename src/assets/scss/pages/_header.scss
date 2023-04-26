@@ -64,3 +64,35 @@
   padding-bottom: 15px;
   padding-top: 15px;
 }
+.user_profile {
+  position: relative;
+  .user_avatar {
+    background-color: #efefef;
+    @include border-radius(50%);
+    margin-right: 10px;
+    overflow: hidden;
+    img {
+      aspect-ratio: 3/2;
+      object-fit: contain;
+      mix-blend-mode: color-burn;
+    }
+  }
+  .user_btn {
+    background-color: transparent;
+    text-align: left;
+    .user_avatar {
+      height: 30px;
+      width: 30px;
+    }
+    .user_name {
+      color: var(--global--color-white);
+      @include fontSize(14px);
+      font-weight: $fw-500;
+      line-height: 1.1;
+      span {
+        @include fontSize(12px);
+        font-weight: $fw-300;
+      }
+    }
+  }
+}

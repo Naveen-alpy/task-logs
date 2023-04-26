@@ -12,7 +12,7 @@ const Header = () => {
         <div className="header_right">
           <nav className="main_menu">
             <ul>
-              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/app-entry">Login/Register</Link></li>
             </ul>
           </nav>
         </div>

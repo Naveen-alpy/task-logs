@@ -109,6 +109,24 @@
 .bg-violet {
   background-color: var(--global--color-violet);
 }
+.color-primary {
+  color: var(--global--color-primary);
+}
+.color-success {
+  color: var(--global--color-success);
+}
+.color-danger {
+  color: var(--global--color-danger);
+}
+.color-hold {
+  color: var(--global--color-hold);
+}
+.color-warning {
+  color: var(--global--color-warning);
+}
+.color-progress {
+  color: var(--global--color-progress);
+}
 .text-black {
   color: var(--global--color-black) !important;
   p,
@@ -129,6 +147,11 @@
       text-decoration: none !important;
     }
   }
+}
+.white-box {
+  background-color: var(--global--color-white);
+  border: 1px solid var(--global--color-border);
+  padding: 15px;
 }
 // Text Transform
 .tt-upper {
@@ -211,6 +234,9 @@
   li {
     font-weight: inherit !important;
   }
+}
+.ff-poppins {
+  font-family: var(--font-poppins) !important;
 }
 .no-transform {
   text-transform: none !important;

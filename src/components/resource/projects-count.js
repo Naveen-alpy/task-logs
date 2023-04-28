@@ -26,7 +26,7 @@ export const ProjectCounts = () => {
         <div className="sort_grid">
           <span className="count color-hold">88</span>
           <div className="tags">CRO</div>
-          <div className="tasks">Templates</div>
+          <div className="tasks">Conversion Rate Optimization</div>
         </div>
       </li>
     </ul>

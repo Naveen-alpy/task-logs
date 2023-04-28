@@ -7,6 +7,7 @@ import {ReactComponent as projectIcon} from "../../assets/icons/project-filled.s
 import { useState } from "react";
 import { TaskCounts } from "./tasks-count";
 import { ProjectCounts } from "./projects-count";
+import { ResourceTasksTable } from "./tasks-table";
 export const OtherResources = () => {
   const[activeTab,setActiveTab] = useState("tab1");
   const tabContent_1 = () => {
@@ -47,6 +48,19 @@ export const OtherResources = () => {
         </ul>
 
         {activeTab === 'tab1' ? <TaskCounts /> : <ProjectCounts />}
+      </section>
+
+      <section className="white-box no-spacing">
+        <header className="project_heading_widget h-space t-space">
+          <h2 className="heading_title size-xxs tt-none fw-regular">Tasks</h2>
+        </header>
+        <div className="data_table"><ResourceTasksTable /></div>
+      </section>
+
+      <section className="white-box no-spacing">
+        <header className="project_heading_widget h-space t-space">
+          <h2 className="heading_title size-xxs tt-none fw-regular">Projects</h2>
+        </header>
       </section>
       
     </section>

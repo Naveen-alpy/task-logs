@@ -3,6 +3,10 @@
     clear: both;
     display: block;
   }
+  .tw-col-sm-6 {
+    @include flex(0,0,50%);
+    width: 50%;
+  }
 }
 // Min-width 575
 @include min-max(575, 767) {
@@ -45,6 +49,10 @@
 }
 // Min-width 768
 @include min(992) {
+  .tw-col-lg-4 {
+    @include flex(0,0,33.33333%);
+    width: 33.33333%;
+  }
   .tasks_sorts {
     li {
       &:before {

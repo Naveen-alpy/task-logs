@@ -42,6 +42,10 @@ select {
   display: inline-block;
   @extend .fm-elem-mix;
 }
+.tp_label {
+  display: block;
+  padding-bottom: 7px;
+}
 .form-elements,
 textarea,
 select {
@@ -196,6 +200,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       }
     }
   }
+  .input-holder {
+    margin-bottom: 0 !important;
+  }
 }
 .modal-dialog {
   max-width: 700px;
@@ -213,7 +220,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       i {
         background-color: var(--global--color-white);
         @include border-radius(50%);
-        border: 1px solid #b2b2b2;
+        border: 1px solid var(--global--color-base-text);
+        box-shadow: inset 0 0 5px rgba($base-text,0.5);
         display: inline-block;
         height: 16px;
         margin: -5px 7px 0 0;
@@ -225,22 +233,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           @include border-radius(50%);
           content: "";
           display: block;
-          height: 70%;
+          height: 10px;
           left: 50%;
           position: absolute;
           top: 50%;
           @include transform(-50%, -50%);
           @include transition(all, ease, 0.2s);
-          width: 70%;
+          width: 10px;
         }
       }
     }
     &:checked {
       & + label {
         i {
-          border-color: var(--global--color-primary);
+          box-shadow: none;
+          border-color: rgba($progress,0.8);
           &:before {
-            background-color: var(--global--color-primary);
+            background-color: var(--global--color-progress);
           }
         }
       }
@@ -275,39 +284,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       position: relative;
       text-transform: uppercase;
       top: 0;
-      &:before,
-      &:after {
-        height: 16px;
-        left: 0;
-        margin: 0;
-        position: absolute;
-        top: 0;
-        vertical-align: middle;
-        width: 16px;
-      }
       &:before {
-        background-color: transparent;
-        border: 1px solid var(--global--color-secondary);
-        display: inline-block;
-        z-index: 2;
-      }
-      &:after {
         @include flex-align(vhCenter);
         color: var(--global--color-white);
         content: "✓";
         @include fontSize(15px);
+        height: 18px;
+        left: 0;
         line-height: 1;
+        margin: 0;
         opacity: 0;
+        position: absolute;
+        top: 0;
         @include transition(all, ease, 0.3s);
-        z-index: 4;
+        vertical-align: middle;
+        width: 18px;
       }
     }
     &:checked {
       & + label {
-        &:before {
-          background-color: var(--global--color-secondary);
-          border-color: transparent !important;
-        }
         &:after {
           opacity: 1;
         }
@@ -318,50 +313,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       cursor: not-allowed;
       opacity: 0.6;
       text-decoration: line-through;
-    }
-    @include min(768) {
-      & + label {
-        @include fontSize(17px);
-        padding-left: 30px;
-        &:before,
-        &:after {
-          height: 18px;
-          width: 18px;
-        }
-      }
-    }
-    @include min(1200) {
-      & + label {
-        @include fontSize(16px);
-        padding-left: 28px;
-        &:before,
-        &:after {
-          height: 15px;
-          width: 15px;
-        }
-      }
-    }
-    @include min(1600) {
-      & + label {
-        @include fontSize(19px);
-        padding-left: 36px;
-        &:before,
-        &:after {
-          height: 20px;
-          width: 20px;
-        }
-      }
-    }
-    @include min(1850) {
-      & + label {
-        @include fontSize(20px);
-        padding-left: 50px;
-        &:before,
-        &:after {
-          height: 25px;
-          width: 25px;
-        }
-      }
     }
   }
 }
@@ -529,6 +480,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         }
       }
     }
+    .input-holder {
+      margin-bottom: 0;
+    }
   }
   @include min(1600) {
     .input-holder {
@@ -540,9 +494,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       }
     }
   }
-  .tw-row {
-    .input-holder {
-      margin-bottom: 0;
+}
+.form_sm_fields {
+  .form-elements,
+  select {
+    @include border-radius(3px);
+    height: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.fx-placeholder {
+  position: relative;
+  input {
+    border: 0;
+    padding: 0;
+    text-align: right;
+    width: 100%;
+    &:focus,
+    &:active {
+      border: 0;
+      outline: none;
     }
+  }
+  .mailExt {
+    @include fontSize(13px);
+    font-style: italic;
+    margin-left: auto;
+    padding-left: 5px;
   }
 }

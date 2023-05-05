@@ -8,6 +8,8 @@ import { useState } from "react";
 import { TaskCounts } from "./tasks-count";
 import { ProjectCounts } from "./projects-count";
 import { ResourceTasksTable } from "./tasks-table";
+import { ResourceProjectTable } from "./project-table";
+
 export const OtherResources = () => {
   const[activeTab,setActiveTab] = useState("tab1");
   const tabContent_1 = () => {
@@ -57,11 +59,10 @@ export const OtherResources = () => {
         <div className="data_table"><ResourceTasksTable /></div>
       </section>
 
-      <section className="white-box no-spacing">
-        <header className="project_heading_widget h-space t-space">
-          <h2 className="heading_title size-xxs tt-none fw-regular">Projects</h2>
-        </header>
-      </section>
+      <header className="project_heading_widget h-space t-space p-b-10">
+        <h2 className="heading_title size-xxs tt-none fw-regular">Projects</h2>
+      </header>
+      <section className="project_grid_wrapper"><ResourceProjectTable /></section>
       
     </section>
   )

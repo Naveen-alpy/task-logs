@@ -6,6 +6,7 @@ import { TemplateWithHeader } from './components/template-with-header';
 import { TemplateWithoutHeader } from './components/template-without-header';
 import { TemplateWithoutHeadFoot } from './components/template-without-headfoot';
 import { OtherResources } from './components/resource';
+import { TeamLead } from './components/team-lead';
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
           <Route path='/' element={<TemplateWithHeader />}>
             <Route index element={<Home />} className="home" />
             <Route path='/resources' element={<OtherResources />} />
+            <Route path='/team-lead' element={<TeamLead />} />
           </Route>
           <Route path='/' element={<TemplateWithoutHeader />}>
             <Route index path='/dashboard' element={<LoginRegister />} />

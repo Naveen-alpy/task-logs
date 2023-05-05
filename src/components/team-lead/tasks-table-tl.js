@@ -7,7 +7,7 @@ import pImg4 from "../../assets/images/avatar/img-4.jpg";
 import { useState } from 'react';
 import { ExpandMoreOutlined } from '@mui/icons-material';
 
-export const ResourceTasksTable = (props) => {
+export const ResourceTasksTableTL = (props) => {
   const [classVal, setClassVal] = useState("Not Started")
 
   const updateStatus = (status,id) => {

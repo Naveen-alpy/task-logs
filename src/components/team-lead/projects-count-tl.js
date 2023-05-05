@@ -1,4 +1,4 @@
-export const ProjectCounts = () => {
+export const ProjectCountsTL = () => {
   return (
     <ul className="tasks_sorts project_count">
       <li>

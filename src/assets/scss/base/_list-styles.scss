@@ -110,3 +110,32 @@ ul.cntList-4-cols {
     columns: 3 auto;
   }
 }
+.anchor_lists {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+    a {
+      color: var(--global--color-violet);
+      padding-left: 15px;
+      position: relative;
+      &:before {
+        background-color: rgba($violet,0.5);
+        content: '';
+        height: 6px;
+        left: 0;
+        position: absolute;
+        top: 6px;
+        @include transition(all,ease,0.4s);
+        @include rotate(45deg);
+        width: 6px;
+      }
+      &:hover {
+        color: var(--global--color-base-text);
+        &:before {
+          background-color: var(--global--color-base-text);
+        }
+      }
+    }
+  }
+}

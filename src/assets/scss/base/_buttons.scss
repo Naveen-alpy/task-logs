@@ -147,3 +147,45 @@ button[type="submit"] {}*/
     display: none;
   }
 }
+.btn_tasks {
+  @include align-items(center);
+  @include border-radius(3px);
+  @include flexbox-display(inline-flex);
+  @include fontSize(13px);
+  font-weight: $fw-500;
+  height: 24px;
+  padding: 0 10px;
+  text-transform: capitalize;
+  &.primary {
+    background-color: var(--global--color-base-text);
+    color: var(--global--color-white);
+  }
+  &.on-hold {
+    background-color: rgba($hold,0.3);
+    color: var(--global--color-hold);
+  }
+  &.pending,
+  &.low {
+    background-color: rgba($danger,0.3);
+    color: var(--global--color-danger);
+  }
+  &.working-on {
+    background-color: rgba($primary-color,0.2);
+    color: var(--global--color-primary);
+  }
+  &.progress,
+  &.under-review {
+    background-color: rgba($progress,0.3);
+    color: var(--global--color-progress);
+  }
+  &.complete,
+  &.high {
+    background-color: rgba($success,0.3);
+    color: var(--global--color-success);
+  }
+  &.not-started,
+  &.medium {
+    background-color: rgba($text-off,0.3);
+    color: var(--global--color-text-off);
+  }
+}

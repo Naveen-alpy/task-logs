@@ -55,6 +55,14 @@
 		}
 	}
 }
+.data_table {
+	.est_time {
+		display: inline-flex;
+		justify-content: flex-end;
+		min-width: 50px;
+		text-align: right;
+	}
+}
 .tabs_list {
 	button {
 		background-color: transparent;
@@ -72,6 +80,85 @@
 			border-bottom-color: var(--global--color-base-text);
 			.project_heading_widget {
 				color: var(--global--color-base-text);
+			}
+		}
+	}
+}
+.user_profile {
+	.profileImg {
+		border: 2px solid var(--global--color-white);
+		@include border-radius(50%);
+		height: 34px;
+		line-height: 0;
+		overflow: hidden;
+		position: relative;
+		width: 34px;
+		z-index: 1;
+		img {
+			line-height: 0;
+			max-height: 30px;
+			max-width: 30px;
+		}
+		&:hover {
+			z-index: 3;
+		}
+	}
+}
+.tasks_btn_wrap {
+	position: relative;
+	ul {
+		background-color: var(--global--color-white);
+		@include box-shadow(0,1px,10px,rgba($black,0.2));
+		display: none;
+		flex-flow: column;
+		margin: 0 0 0;
+		position: absolute;
+		right: 0;
+		@include transition(all,ease-in-out,0.2s);
+		top: 24px;
+		width: 110px;
+		z-index: 3;
+		li {
+			background-color: var(--global--color-white);
+			border-bottom: 1px solid var(--global--color-grey);
+			cursor: pointer;
+			@include fontSize(12px);
+			font-weight: $fw-500;
+			margin: 0;
+			padding: 5px 10px;
+			@include transition(all,ease,0.2s);
+			&:hover {
+				background-color: rgba($base-text,0.1);
+				color: var(--global--color-violet);
+			}
+		}
+	}
+	&:hover {
+		ul {
+			@include flexbox-display(inline-flex);
+			animation: smoothToTop ease-in-out 0.1s;
+		}
+	}
+	&.select_opt {
+		.btn_tasks {
+			background-color: transparent;
+			border: 1px solid var(--global--color-border);
+			@include fontSize(14px);
+			height: 36px;
+			width: 100%;
+			svg {
+				margin-left: auto;
+			}
+		}
+		ul {
+			border: 1px solid var(--global--color-grey);
+			box-shadow: none;
+			top: 36px;
+			width: 100%;
+			li {
+				@include fontSize(14px);
+				font-weight: $fw-300;
+				padding: 6px 10px;
 			}
 		}
 	}
@@ -122,5 +209,218 @@
 		.tasks {
 			width: 100%;
 		}
+	}
+}
+.expanded_wrapper {
+	border-bottom: 1px solid var(--global--color-border);
+	padding: 10px 30px 10px 60px;
+	position: relative;
+	.ul-rows {
+		margin-left: -20px;
+		margin-right: -20px;
+		&>* {
+			margin-bottom: 5px;
+			margin-top: 5px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	.tasks_assets {
+		@include fontSize(14px);
+		p {
+			margin-bottom: 7px !important;
+			strong {
+				@include fontSize(15px);
+			}
+		}
+		a {
+			color: var(--global--color-violet);
+			&:hover {
+				color: var(--global--color-base-text);
+			}
+		}
+		label {
+			input[type="checkbox"] {
+				margin-right: 10px;
+			}
+		}
+	}
+	.tasks_btn_wrap {
+		margin-top: 25px;
+	}
+}
+@keyframes smoothToTop {
+	0% {
+		margin-top: 10px;
+	}
+	100% {
+		margin-top: 0;
+	}
+}
+// Project Grid
+.project_grid {
+	background-color: var(--global--color-white);
+	border: 1px solid var(--global--color-border);
+	position: relative;
+	width: 100%;
+	&>* {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.project_name {
+		border-bottom: 1px solid var(--global--color-border);
+		@include fontSize(16px);
+		font-weight: $fw-500;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		small {
+			font-weight: $fw-400;
+			padding-top: 2px;
+			svg {
+				fill: var(--global--color-base-text);
+				margin-right: 6px;
+			}
+		}
+		a {
+			color: inherit;
+			&:hover {
+				color: var(--global--color-primary);
+			}
+		}
+	}
+	.user_profile {
+		padding-bottom: 4px;
+		padding-top: 10px;
+		.user_profile-info {
+			font-weight: $fw-500;
+			padding-left: 5px;
+			small {
+				font-weight: $fw-400;
+			}
+		}
+	}
+	aside {
+		@include fontSize(12px);
+		font-weight: $fw-300;
+	}
+	.other_teams {
+		padding-top: 6px;
+		header {
+			font-weight: $fw-500;
+		}
+		.user_profile {
+			padding-bottom: 0;
+			padding-top: 0;
+			.profileImg {
+				height: 30px;
+				margin-inline-end: -5px;
+				position: relative;
+				width: 30px;
+				img {
+					max-height: 26px;
+					max-width: 26px;
+				}
+			}
+		}
+	}
+	.progress_wrapper {
+		padding-bottom: 8px;
+		padding-top: 12px;
+	}
+	.progress_bar {
+		background-color: rgba($base-text,0.2);
+		@include border-radius(3px);
+		height: 5px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		.progress_status {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			&.cwp {
+				background-color: $success;
+			}
+			&.lp {
+				background-color: $primary-color;
+			}
+			&.wtg {
+				background-color: $warning;
+			}
+			&.cro {
+				background-color: $progress;
+			}
+		}
+	}
+	.due-date {
+		font-weight: $fw-500;
+	}
+	.project_foot {
+		border-top: 1px solid var(--global--color-border);
+		margin-top: 10px;
+		padding-bottom: 15px;
+		padding-top: 15px;
+	}
+}
+.addtasks {
+	background-color: transparent;
+	color: var(--global--color-success);
+	font-weight: $fw-500;
+	svg {
+		margin-right: 5px;
+	}
+	&:hover {
+		color: var(--global--color-base-text);
+	}
+}
+
+// SideDrawer Windows
+.popOverWrapper {
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 99999;
+	.close_overlay {
+		height: 100%;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	.popContentWrapper {
+		background-color: var(--global--color-white);
+		@include box-shadow(-2px,1px,15px,rgba($black,0.1));
+		height: 100%;
+		max-width: 350px;
+		padding: 20px 30px;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 95%;
+		z-index: 5;
+		.close_wrap {
+			background-color: var(--global--color-white);
+			color: var(--global--color-danger);
+			left: -40px;
+			padding: 6px 8px;
+			position: absolute;
+			top: 10px;
+			&:hover {
+				color: var(--global--color-base-text);
+			}
+		}
+	}
+	@include max(767) {
+		.popContentWrapper {
+			max-width: 320px;
+			padding: 15px 20px;
+		}
+	}
+}
+.append_group {
+	&>* {
+		width: 100%;
 	}
 }

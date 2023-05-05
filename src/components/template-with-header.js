@@ -31,6 +31,7 @@ export const TemplateWithHeader = () => {
           <ul>
             <li><Link to="/">Dashboard</Link></li>
             <li><Link to="/resources">Other Resources</Link></li>
+            <li><Link to="/team-lead">Team Leads</Link></li>
           </ul>
         </nav>
       </aside>

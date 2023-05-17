@@ -19,3 +19,25 @@
     }
   }
 }
+.main_sidebar {
+  .main_menu {
+    li {
+      a {
+        color: rgba($white,0.5);
+        @include flex-align(vCenter);
+        @include flex-wrap(nowrap);
+        @include fontSize(14px);
+        font-weight: $fw-400;
+        gap: var(--tw-link-icon-gap);
+        height: 40px;
+        &:hover {
+          color: var(--global--color-white);
+        }
+        .title {
+          transition: none !important;
+          white-space: nowrap !important;
+        }
+      }
+    }
+  }
+}

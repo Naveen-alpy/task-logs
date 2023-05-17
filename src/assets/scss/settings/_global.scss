@@ -40,7 +40,7 @@
   --global--color-primary: var(--global--color-blue);
   --global--color-secondary: var(--global--color-black);
   --global--color-box-bg: #e2e2e2;
-  --global--color-border: #d1d1d1;
+  --global--color-border: #ced4da;
   --global--color-base-text: #163157;
   --global--color-text-off: #9e9ea7;
   --global--color-success: #3ac977;
@@ -60,8 +60,10 @@
   --global--opacity-white-30: rgba(255, 255, 255, 0.3);
   --global--opacity-white-50: rgba(255, 255, 255, 0.5);
 
+  // Spacing
   --tw-gutter-space: 30px;
   --tw-sm-gutter: 16px;
+  --tw-link-icon-gap: 10px;
 }
 $primary-color:     #1cbcfd !default;
 $base-text:         #163157 !default;

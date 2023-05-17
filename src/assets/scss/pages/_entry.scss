@@ -127,3 +127,19 @@
     }
   }
 }
+.react-datepicker-popper {
+  z-index: 9 !important;
+}
+.register-container {
+  [class*="tw-col-"] {
+    .input-holder {
+      margin-bottom: 0;
+    }
+  }
+  .react-datepicker__header {
+    select {
+      height: 34px;
+      padding-left: 10px;
+    }
+  }
+}

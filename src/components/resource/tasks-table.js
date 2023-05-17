@@ -43,7 +43,7 @@ export const ResourceTasksTable = (props) => {
       selector: row => (<span className='est_time'>{row.estTime}</span>)
     }, {
       name: 'Assigned To',
-      selector: row => (<div className='user_profile vCenter m-inline-end'>{row.rsrcImg.map((rsrcIm,i)=>(<figure className='vhCenter profileImg'><img height="30px" width="30px" src={rsrcIm} alt={row.asgnTo} /></figure>))}</div>)
+      selector: row => (<div className='user_profile vCenter m-inline-end'>{row.rsrcImg.map((rsrcIm,i)=>(<figure className='vhCenter profileImg' key={i}><img height="30px" width="30px" src={rsrcIm} alt={row.asgnTo} /></figure>))}</div>)
     }, {
       name: 'Priority',
       selector: row => (<span className={`btn_tasks ${row.priority.replace(/ +/g, '-').toLowerCase()}`}>{row.priority}</span>),

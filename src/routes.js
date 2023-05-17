@@ -7,6 +7,9 @@ import { TemplateWithoutHeader } from './components/template-without-header';
 import { TemplateWithoutHeadFoot } from './components/template-without-headfoot';
 import { OtherResources } from './components/resource';
 import { TeamLead } from './components/team-lead';
+import { TeamLeadTasksSummary } from './components/team-lead/tasks-lists-tl';
+import { TeamLeadProjectSummary } from './components/team-lead/project-lists-tl';
+import { UserProfile } from './components/users';
 
 const AppRoutes = () => {
   return (
@@ -17,6 +20,9 @@ const AppRoutes = () => {
             <Route index element={<Home />} className="home" />
             <Route path='/resources' element={<OtherResources />} />
             <Route path='/team-lead' element={<TeamLead />} />
+            <Route path='/tl-tasks-summary' element={<TeamLeadTasksSummary />} />
+            <Route path='/tl-project-summary' element={<TeamLeadProjectSummary />} />
+            <Route path='/user-profile' element={<UserProfile />} />
           </Route>
           <Route path='/' element={<TemplateWithoutHeader />}>
             <Route index path='/dashboard' element={<LoginRegister />} />

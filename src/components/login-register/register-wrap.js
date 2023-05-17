@@ -1,4 +1,8 @@
+import { useState } from "react"
+import ReactDatePicker from "react-datepicker"
+
 const EntryRegister = () => {
+  const [startDate,setStartDate] = useState(null);
   return (
     <>
       <header className="project_heading_widget">
@@ -25,7 +29,7 @@ const EntryRegister = () => {
           <div className="tw-col-xl-3 tw-col-md-6">
             <div className="input-holder">
               <label className="placeholder_lab">DOB*</label>
-              <input type="type" className="form-elements" />
+              <ReactDatePicker className="form-elements" selected={startDate} onChange={(date) => setStartDate(date)} peekNextMonth showMonthDropdown showYearDropdown dropdownMode="select" />
             </div>
           </div>
           <div className="tw-col-md-6">

@@ -11,13 +11,13 @@ export const ProjectLogo = (props) => {
   if(props.link) {
     if(props.IconLogo) {
       return(
-        <Link className="logo_link" to={props.linkTo}>
+        <Link className={`logo_link ${props.addClass}`} to={props.linkTo}>
           {template_fav}
         </Link>
       )
     } else {
       return(
-        <Link className="logo_link" to={props.linkTo}>
+        <Link className={`logo_link ${props.addClass}`} to={props.linkTo}>
           {template}
         </Link>
       )

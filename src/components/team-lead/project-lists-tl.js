@@ -1,34 +1,26 @@
 import { SvgIcon } from "@mui/material";
 import { Link } from "react-router-dom";
-import {ReactComponent as ticketIcon} from "../../assets/icons/ticket-filled.svg";
 import {ReactComponent as projectIcon} from "../../assets/icons/project-filled.svg";
 import {ReactComponent as addIcon} from "../../assets/icons/add-alt.svg";
 import {ReactComponent as closeIcon} from "../../assets/icons/close.svg";
-import { TasksCountTL } from "./tasks-count-tl";
 import { ProjectCountsTL } from "./projects-count-tl";
-import { TLTasktableIntro } from "./tasks-table-intro";
 import { ResourceProjectTableTL } from "./project-table-tl";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MultiSelect } from "react-multi-select-component";
 
-export const TeamLead = () => {
+export const TeamLeadProjectSummary = () => {
   // Create Tasks/Projects Click Events
   const [showPopOver, setShowPopOver] = useState(false);
-  const [showTaskOpt, setShowTaskOpt] = useState(false);
   const [showProjectOpt, setShowProjectOpt] = useState(false);
   const showPopup = (type) => {
-    if(type === "task"){
-      setShowTaskOpt(true)
-    }
     if(type === "project"){
       setShowProjectOpt(true)
     }
     setShowPopOver(true)
   }
   const hidePopup = () => {
-    setShowTaskOpt(false)
     setShowProjectOpt(false)
     setShowPopOver(false)
   }
@@ -74,27 +66,6 @@ export const TeamLead = () => {
           <ul className="tabs_list vCenter m-b-0">
             <li className="active_tab">
               <header className="project_heading_widget vCenter">
-                <SvgIcon component={ticketIcon} inheritViewBox sx={{fontSize:24}} />
-                <h2 className="heading_title size-xs tt-none fw-regular ff-poppins">Tasks Summary</h2>
-              </header>
-            </li>
-          </ul>
-          <button type="button" className="vCenter addtasks m-l-auto" onClick={()=>{showPopup("task");}}>
-            <SvgIcon component={addIcon} inheritViewBox sx={{fontSize: 14}} />
-            Create/Assign Task
-          </button>
-        </div>
-        <TasksCountTL />
-      </section>
-      {/* End of Tasks Section */}
-
-      <section className="white-box no-spacing"><TLTasktableIntro /></section>
-
-      <section className="white-box">
-        <div className="vCenter p-b-20">
-          <ul className="tabs_list vCenter m-b-0">
-            <li className="active_tab">
-              <header className="project_heading_widget vCenter">
                 <SvgIcon component={projectIcon} inheritViewBox sx={{fontSize:24}} />
                 <h2 className="heading_title size-xs tt-none fw-regular ff-poppins">Projects Summary</h2>
               </header>
@@ -115,23 +86,6 @@ export const TeamLead = () => {
         <section className="popContentWrapper">
           <button type="button" className="vhCenter close_wrap" onClick={()=> {hidePopup();}}><SvgIcon component={closeIcon} inheritViewBox sx={{fontSize: 26}} /></button>
           <form className="form_wrapper form_sm_fields">
-            {showTaskOpt && <div className="tsk_grid input-holder">
-              <header className="project_heading_widget">
-                <h3 className="heading_title size-xxs tt-none vCenter">
-                  <SvgIcon component={ticketIcon} inheritViewBox sx={{fontSize:20}} />
-                  Create/Assign Task
-                </h3>
-              </header>
-              <div className="input-holder">
-                <label for="" className="tp_label">Type/Category</label>
-                <select>
-                  <option>-- Select --</option>
-                  <option>Revision</option><option>SEO</option><option>Content Adding</option>
-                </select>
-              </div>
-            </div>
-            }
-            {showProjectOpt &&
             <div className="prjct_grid input-holder">
               <header className="project_heading_widget">
                 <h3 className="heading_title size-xxs tt-none vCenter">
@@ -143,11 +97,10 @@ export const TeamLead = () => {
                 <label for="" className="tp_label">Type/Category</label>
                 <select>
                   <option>-- Select --</option>
-                  <option>CWP</option><option>E-Commerce</option><option>LP</option><option>CRO</option><option>WTG</option>
+                  <option>CWP</option><option>LP</option><option>CRO</option><option>WTG</option>
                 </select>
               </div>
             </div>
-            }
             <div className="input-holder">
               <label for="" className="tp_label p-b-0">Select Resource</label>
               <div className="tw-row xs-gtr">

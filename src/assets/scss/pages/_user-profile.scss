@@ -1,0 +1,152 @@
+.profile_banner {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90px;
+  margin: -12px -10px 0 -20px;
+  position: relative;
+  &:before {
+    background-color: rgba($black,0.8);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+.dflt_key_skills {
+  margin-left: -3px;
+  margin-right: -3px;
+  padding-top: 12px;
+  &>* {
+    background-color: rgba($base-text,0.3);
+    border: 1px solid var(--global--color-border);
+    @include border-radius(4px);
+    color: var(--global--color-base-text);
+    @include fontSize(10px);
+    font-weight: $fw-500;
+    margin: 3px;
+    padding: 4px 10px;
+  }
+}
+.user_profile_wrapper {
+  margin-top: -50px;
+  .user_avatar {
+    clear: both;
+    display: block;
+    margin: 0 auto 10px;
+    position: relative;
+    width: 120px;
+    .image_wrapper {
+      border: 3px solid var(--global--color-white);
+      @include border-radius(50%);
+      @include box-shadow(0, 0, 8px,rgba($black,0.2));
+      height: 120px;
+      overflow: hidden;
+      width: 120px;
+      img {
+        max-height: 120px;
+        max-width: 120px;
+      }
+    }
+    .upload_file {
+      bottom: 5px;
+      position: absolute;
+      right: 0;
+      z-index: 3;
+      input[type="file"] {
+        display: none;
+        &+label {
+          background-color: var(--global--color-white);
+          border: 1px solid rgba($text-off,0.3);
+          @include border-radius(50%);
+          cursor: pointer;
+          height: 32px;
+          @include transition(all,ease,0.3s);
+          width: 32px;
+          &:hover {
+            color: var(--global--color-primary);
+          }
+        }
+      }
+    }
+  }
+  .user_name {
+    color: var(--global--color-base-text);
+    @include fontSize(16px);
+    font-weight: $fw-500;
+    small {
+      @include fontSize(13px);
+      font-weight: $fw-300;
+    }
+  }
+  .dflt_user_info {
+    padding-top: 12px;
+    li {
+      @include flex-wrap(nowrap);
+      @include fontSize(14px);
+      font-weight: $fw-300;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      .dui_info {
+        font-weight: $fw-500;
+        @include flex(0,0, 75px);
+      }
+      .dui_value {
+        color: rgba($base-text,0.7);
+        flex-grow: 1;
+        @include fontSize(13px);
+        overflow-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+  }
+}
+.usr_prfl_content {
+  .white-box {
+    padding: 30px 30px 20px !important;
+  }
+  .project_heading_widget {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    &:before {
+      background-color: var(--global--color-border);
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      @include transformY(-50%);
+      width: 100%;
+      z-index: 1;
+    }
+    .heading_title {
+      background-color: var(--global--color-white);
+      display: inline-block;
+      font-weight: $fw-500 !important;
+      line-height: 1;
+      padding: 0 10px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+  .input-holder {
+    .placeholder_lab {
+      display: block;
+      @include fontSize(15px);
+      font-weight: $fw-500;
+      line-height: 1.2;
+      padding-bottom: 6px;
+    }
+    .form-elements,
+    select,
+    textarea {
+      color: var(--global--color-base-text);
+      @include fontSize(15px);
+      font-weight: $fw-500;
+    }
+  }
+}

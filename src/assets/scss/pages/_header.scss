@@ -13,13 +13,15 @@
   }
 }
 .project_header {
-  background-color: var(--global--color-black);
+  //background-color: var(--global--color-black);
+  background-color: darken($base-text,15%);
   color: var(--global--color-white);
   left: 0;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   position: fixed;
   top: 0;
+  @include transition(all,ease,0.3s);
   width: 100%;
   z-index: 9;
   [class*="project_logo_"] {

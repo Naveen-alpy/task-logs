@@ -5,17 +5,49 @@
 	min-height: 100vh ;
 	padding: 60px 10px 0 0;
 	position: relative;
+	@include transition(all,ease,0.3s);
 	[class*="project_logo_"] {
     svg {
       fill: var(--global--color-white);
     }
   }
 	.main_sidebar {
-		background-color: var(--global--color-black);
+		//background-color: var(--global--color-black);
+		background-color: darken($base-text,15%);
 		color: var(--global--color-white);
-		@include flex(0,0,60px);
-		padding: 5px;
-		width: 60px;
+		@include flex(0,0,50px);
+		@include transition(all,ease,0.3s);
+		width: 50px;
+		z-index: 11;
+		.hamburger_menu {
+			background-color: transparent;
+			height: 40px;
+			position: absolute;
+			right: -50px;
+			top: 4px;
+			width: 40px;
+			z-index: 5;
+			span {
+				background-color: var(--global--color-white);
+				display: inline-block;
+				height: 2px;
+				position: absolute;
+				right: 0;
+				@include transition(all,ease,0.3s);
+				transform-origin: right;
+				width: 26px;
+				&.first-child {
+					margin-top: -7px;
+				}
+				&.last-child {
+					margin-top: 7px;
+				}
+			}
+		}
+		.project_logo_ {
+			@include flex-align(vCenter);
+			height: 48px;
+		}
 	}
 	.main_container {
 		flex-grow: 1;
@@ -117,7 +149,7 @@
 		@include transition(all,ease-in-out,0.2s);
 		top: 24px;
 		width: 110px;
-		z-index: 3;
+		z-index: 6;
 		li {
 			background-color: var(--global--color-white);
 			border-bottom: 1px solid var(--global--color-grey);
@@ -235,6 +267,7 @@
 		}
 		a {
 			color: var(--global--color-violet);
+			gap: var(--tw-link-icon-gap);
 			&:hover {
 				color: var(--global--color-base-text);
 			}
@@ -273,6 +306,7 @@
 		font-weight: $fw-500;
 		padding-bottom: 10px;
 		padding-top: 10px;
+		position: relative;
 		small {
 			font-weight: $fw-400;
 			padding-top: 2px;
@@ -285,6 +319,40 @@
 			color: inherit;
 			&:hover {
 				color: var(--global--color-primary);
+			}
+		}
+		.launch_date {
+			background-color: transparent;
+			@include border-radius(3px);
+			color: var(--global--color-white);
+			display: inline-block;
+			@include fontSize(10px);
+			line-height: 1;
+			overflow: hidden;
+			padding: 5px 8px;
+			position: absolute;
+			right: 0;
+			top: -10px;
+			z-index: 3;
+			.text {
+				position: relative;
+				z-index: 3;
+			}
+			.start,
+			.launched {
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+			.start {
+				background-color: var(--global--color-base-text);
+				width: 100%;
+				z-index: 1;
+			}
+			.launched {
+				background-color: var(--global--color-hold);
+				z-index: 2;
 			}
 		}
 	}
@@ -307,6 +375,7 @@
 		padding-top: 6px;
 		header {
 			font-weight: $fw-500;
+			width: 100%;
 		}
 		.user_profile {
 			padding-bottom: 0;
@@ -351,6 +420,9 @@
 			&.cro {
 				background-color: $progress;
 			}
+			&.ecom {
+				background-color: $hold;
+			}
 		}
 	}
 	.due-date {
@@ -377,6 +449,7 @@
 
 // SideDrawer Windows
 .popOverWrapper {
+	display: none;
 	position: fixed;
 	right: 0;
 	top: 0;
@@ -389,6 +462,9 @@
 		width: 100%;
 		z-index: 1;
 	}
+	.heading_title {
+		gap: var(--tw-link-icon-gap);
+	}
 	.popContentWrapper {
 		background-color: var(--global--color-white);
 		@include box-shadow(-2px,1px,15px,rgba($black,0.1));
@@ -396,8 +472,9 @@
 		max-width: 350px;
 		padding: 20px 30px;
 		position: fixed;
-		right: 0;
+		right: -100%;
 		top: 0;
+		@include transition(all,ease-in-out,0.2);
 		width: 95%;
 		z-index: 5;
 		.close_wrap {
@@ -416,6 +493,12 @@
 		.popContentWrapper {
 			max-width: 320px;
 			padding: 15px 20px;
+		}
+	}
+	&.showPopOver {
+		display: block;
+		.popContentWrapper {
+			right: 0;
 		}
 	}
 }

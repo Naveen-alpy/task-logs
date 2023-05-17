@@ -7,9 +7,10 @@ import pImg1 from "../../assets/images/avatar/img-1.jpg";
 import pImg2 from "../../assets/images/avatar/img-2.jpg";
 import pImg3 from "../../assets/images/avatar/img-3.jpg";
 import pImg4 from "../../assets/images/avatar/img-4.jpg";
+import moment from "moment-timezone";
 
-export const ResourceProjectTable = () => {
-  const [classVal, setClassVal] = useState("Not Started")
+export const ResourceProjectTableTL = () => {
+  const [classVal, setClassVal] = useState("Not Started");
 
   const updateStatus = (status,id) => {
     const updatedTabledata = prjctTableData.map(el => {return el.id === id ? {...el,status} : el})
@@ -27,8 +28,10 @@ export const ResourceProjectTable = () => {
       prjctTicketLink: "https://www.google.co.in/",
       prjctOwner: "Biju",
       prjctOwnImg: pImg1,
+      prjctLeads: "Leading",
       startDate: "06 Feb 2023",
       endDate: "01 Mar 2023",
+      prjctLaunch: "",
       shortDesc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       otherTeam: [pImg2, pImg3, pImg4]
     }, {
@@ -40,8 +43,10 @@ export const ResourceProjectTable = () => {
       prjctTicketLink: "https://www.google.co.in/",
       prjctOwner: "Jibin",
       prjctOwnImg: pImg3,
+      prjctLeads: "Supporting",
       startDate: "14 Feb 2023",
       endDate: "21 Feb 2023",
+      prjctLaunch: "15 Mar 2023",
       shortDesc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       otherTeam: [pImg4]
     }, {
@@ -53,8 +58,10 @@ export const ResourceProjectTable = () => {
       prjctTicketLink: "https://www.google.co.in/",
       prjctOwner: "Renjith",
       prjctOwnImg: pImg4,
+      prjctLeads: "Supporting",
       startDate: "18 Feb 2023",
       endDate: "08 Mar 2023",
+      prjctLaunch: "20 Mar 2023",
       shortDesc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       otherTeam: [pImg2, pImg1]
     }, {
@@ -66,8 +73,10 @@ export const ResourceProjectTable = () => {
       prjctTicketLink: "https://www.google.co.in/",
       prjctOwner: "Sarath",
       prjctOwnImg: pImg1,
-      startDate: "06 Feb 2023",
-      endDate: "01 Mar 2023",
+      prjctLeads: "Supporting",
+      startDate: "06 May 2023",
+      endDate: "20 Jun 2023",
+      prjctLaunch: "",
       shortDesc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       otherTeam: [pImg3, pImg1]
     }, {
@@ -79,17 +88,19 @@ export const ResourceProjectTable = () => {
       prjctTicketLink: "https://www.google.co.in/",
       prjctOwner: "Saranya",
       prjctOwnImg: pImg3,
-      startDate: "10 Mar 2023",
-      endDate: "17 Mar 2023",
+      prjctLeads: "Leading",
+      startDate: "10 Apr 2023",
+      endDate: "27 May 2023",
+      prjctLaunch: "26 Apr 2023",
       shortDesc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
-      otherTeam: [pImg2, pImg4],
-      team:[
+      otherTeam: [pImg2, pImg4]
+      /* team:[
         {
           id: "",
           memberName:"",
           memberImg: ""
         }
-      ]
+      ] */
     }
   ])
   return(
@@ -102,13 +113,20 @@ export const ResourceProjectTable = () => {
               <small className="clear color-text-off"><Link className="vCenter prj_ticket" to={ptData.prjctTicketLink} target="_blank" rel="nofollow noopener">
                 <SvgIcon component={ticketIcon} inheritViewBox sx={{fontSize: 16}} /> {ptData.prjctType}
               </Link></small>
+              <div className="launch_wrap">
+                {ptData.prjctLaunch && <small className="launch_date">
+                  <span className="text">Launched on {ptData.prjctLaunch}</span>
+                  <span className="start"></span>
+                  <span className="launched" style={{"width": `${Math.round((moment().diff(moment(ptData.prjctLaunch,"DD MMM YYYY"),'days')/30)*100)}%`}}></span>
+                </small>}
+              </div>
             </header>
             <div className='user_profile vCenter'>
               <figure className='vhCenter profileImg'><img height="30px" width="30px" src={ptData.prjctOwnImg} alt={ptData.prjctOwner} /></figure>
               <div className="user_profile-info">{ptData.prjctOwner}<small className="clear color-text-off">{ptData.startDate}</small></div>
             </div>
             <aside className="color-text-off">{ptData.shortDesc}</aside>
-            <div className="other_teams">
+            <div className="other_teams vCenter">
               <header className="sub-title">Team</header>
               <div className='user_profile vCenter'>
                 {
@@ -117,12 +135,17 @@ export const ResourceProjectTable = () => {
                   })
                 }
               </div>
+              <span className="tasks_btn_wrap m-l-auto"><span className={`btn_tasks ${ptData.prjctLeads === "Leading" ? "leading" : "supporting"}`}>{ptData.prjctLeads}</span></span>
             </div>
             <div className="progress_wrapper">
-              <div className="progress_bar"><span className={`progress_status ${ptData.pTypeSlug}`} lp style={{"width": "60%"}}></span></div>
+              <div className="progress_bar"><span className={`progress_status ${ptData.pTypeSlug}`} lp style={{"width": `${
+                Math.round(((
+                  moment().diff(moment(ptData.startDate,'DD MMM YYYY'),'days')/moment(ptData.endDate,'DD MMM YYYY').diff(moment(ptData.startDate,'DD MMM YYYY'),'days')
+                  )*100))
+                }%`}}></span></div>
             </div>
             <footer className="project_foot vCenter">
-              <small className="due-date">Due : {ptData.endDate}</small>
+              <small className="due-date">Due : {ptData.endDate}</small><div className="clear"></div>
               <nav className='tasks_btn_wrap m-l-auto'>
                 <button type='button' className={`btn_tasks ${classVal.replace(/ +/g, '-').toLowerCase()}`}>{classVal} <ExpandMoreOutlined fontSize='small' /></button>
                 <ul>

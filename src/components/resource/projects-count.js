@@ -29,6 +29,13 @@ export const ProjectCounts = () => {
           <div className="tasks">Conversion Rate Optimization</div>
         </div>
       </li>
+      <li>
+        <div className="sort_grid">
+          <span className="count color-hold">02</span>
+          <div className="tags">E-Com</div>
+          <div className="tasks">E-Commerce/Shopify</div>
+        </div>
+      </li>
     </ul>
   )
 }

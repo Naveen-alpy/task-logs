@@ -1,15 +1,11 @@
-import { SvgIcon } from "@mui/material";
 import DataTable from 'react-data-table-component';
-import { Link } from 'react-router-dom';
-import {ReactComponent as ticketIcon} from "../../assets/icons/ticket-filled.svg";
 import pImg1 from "../../assets/images/avatar/img-1.jpg";
 import pImg2 from "../../assets/images/avatar/img-2.jpg";
 import pImg3 from "../../assets/images/avatar/img-3.jpg";
 import pImg4 from "../../assets/images/avatar/img-4.jpg";
 import { useState } from 'react';
-import { ExpandMoreOutlined } from '@mui/icons-material';
 
-export const ResourceTasksTableTL = (props) => {
+export const TLTasktableIntro = (props) => {
   const [classVal, setClassVal] = useState("Not Started")
 
   const updateStatus = (status,id) => {
@@ -79,7 +75,6 @@ export const ResourceTasksTableTL = (props) => {
       enDate: '07 Mar 2023',
       estTime: '1.00',
       asgnTo: ["salman","Devina","Saranya","suhail"],
-      tmNtTask: 'https://www.google.co.in/',
       rsrcImg: [pImg1, pImg2, pImg3, pImg4],
       priority: "Low"
     }, {
@@ -94,7 +89,6 @@ export const ResourceTasksTableTL = (props) => {
       enDate: '07 Mar 2023',
       estTime: '0.30',
       asgnTo: ['Suhail'],
-      tmNtTask: 'https://www.google.co.in/',
       rsrcImg: [pImg4],
       priority: "High"
     }, {
@@ -109,82 +103,16 @@ export const ResourceTasksTableTL = (props) => {
       enDate: '10 Mar 2023',
       estTime: '40.00',
       asgnTo: ['Devina'],
-      tmNtTask: 'https://www.google.co.in/',
       rsrcImg: [pImg2],
       priority: "Medium"
     }
   ])
-  const ExpandedComponent = ({ data }) =>
-    <section className='expanded_wrapper'>
-      <button type='button' className="btn_tasks primary">Start</button>
-      <ul className='ul-rows dFlex'>
-        <li>
-          <div className='tasks_assets'>
-            <p><strong>Details</strong></p>
-            <ul className="anchor_lists">
-              <li><Link to="https://www.google.co.in/" target='_blank' rel='nofollow noopener'>Ticket Link</Link></li>
-              <li><Link to="https://www.google.co.in/" target='_blank' rel='nofollow noopener'>Doc Link</Link></li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div className='tasks_assets'>
-            <p><strong>Other Assets</strong></p>
-            <ul>
-              <li>
-                <label className='vCenter' for="">
-                  <input type="checkbox" /> Mail forwarded.
-                </label>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div className='tasks_assets'>
-            <p><strong>Assigned Persons</strong></p>
-            <ul>
-              <li>
-                <span>{data.asgnTo?.join(", ")}</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div className='tasks_assets'>
-            <p><strong>Time &amp; Note updates</strong></p>
-            <ul>
-              <li>
-                <Link className='vCenter' to={data.tmNtTask} target='_blank' rel='nofollow noopener'>
-                  <SvgIcon component={ticketIcon} inheritViewBox sx={{fontSize:18}} />
-                  Update your taks.
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div className='tasks_assets'>
-            <nav className='tasks_btn_wrap'>
-              <button type='button' className={`btn_tasks ${classVal.replace(/ +/g, '-').toLowerCase()}`}>{classVal} <ExpandMoreOutlined fontSize='small' /></button>
-              <ul>
-                <li onClick={() => {updateStatus("Complete",data.id)}}>Complete</li>
-                <li onClick={() => {updateStatus("Pending",data.id)}}>Pending</li>
-                <li onClick={() => {updateStatus("Working On",data.id)}}>Working On</li>
-                <li onClick={() => {updateStatus("On Hold",data.id)}}>On Hold</li>
-              </ul>
-            </nav>
-          </div>
-        </li>
-      </ul>
-    </section>;
   return (
     <DataTable 
       columns={tableHeads}
       data={tableData}
       striped={true}
       /* selectableRows */
-      expandableRows
-      expandableRowsComponent={ExpandedComponent}
       pagination
       fixedHeader
       fixedHeaderScrollHeight='400px'

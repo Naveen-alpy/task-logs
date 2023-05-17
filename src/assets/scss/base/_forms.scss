@@ -108,6 +108,7 @@ select {
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 10px 6px;
+  line-height: 1.4;
   outline: none;
   &:invalid {
     color: #9d9d9d;
@@ -522,5 +523,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-style: italic;
     margin-left: auto;
     padding-left: 5px;
+  }
+}
+.thin-border-radius {
+  .form-elements,
+  textarea,
+  select {
+    @include border-radius(3px);
   }
 }

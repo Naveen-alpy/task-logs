@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom"
 import Footer from "./header_footer/footer"
 import { ProjectLogo } from "./utils/tools"
-import { EmpIcon, HomeIcon, PmIcon, ProjctIcon, TicketIcon, TlIcon } from "./utils/icons";
+import { EmpIcon, HomeIcon, PmIcon, ProjctIcon, TicketIcon, TlIcon, LoginIcon } from "./utils/icons";
 import { useState } from "react";
 
 export const TemplateWithHeader = () => {
@@ -43,7 +43,9 @@ export const TemplateWithHeader = () => {
             <li><Link to="/team-lead"><TlIcon size="16px" /><span className="title">Team Leads</span></Link></li>
             <li><Link to="/tl-tasks-summary"><TicketIcon size="16px" /><span className="title">TL Tasks Summary</span></Link></li>
             <li><Link to="/tl-project-summary"><ProjctIcon size="16px" /><span className="title">TL Project Summary</span></Link></li>
+            <li><Link to="/single-project"><ProjctIcon size="16px" /><span className="title">Single Project</span></Link></li>
             <li><Link to="/user-profile"><EmpIcon size="16px" /><span className="title">User Profile</span></Link></li>
+            <li><Link to="/login-details"><LoginIcon size="18px" /><span className="title">Logins</span></Link></li>
           </ul>
         </nav>
       </aside>

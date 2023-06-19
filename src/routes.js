@@ -10,6 +10,8 @@ import { TeamLead } from './components/team-lead';
 import { TeamLeadTasksSummary } from './components/team-lead/tasks-lists-tl';
 import { TeamLeadProjectSummary } from './components/team-lead/project-lists-tl';
 import { UserProfile } from './components/users';
+import { FtpLogins } from './components/ftp';
+import { SingleProjectPage } from './components/team-lead/single-project';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +25,8 @@ const AppRoutes = () => {
             <Route path='/tl-tasks-summary' element={<TeamLeadTasksSummary />} />
             <Route path='/tl-project-summary' element={<TeamLeadProjectSummary />} />
             <Route path='/user-profile' element={<UserProfile />} />
+            <Route path='/single-project' element={<SingleProjectPage />} />
+            <Route path='/login-details' element={<FtpLogins />} />
           </Route>
           <Route path='/' element={<TemplateWithoutHeader />}>
             <Route index path='/dashboard' element={<LoginRegister />} />

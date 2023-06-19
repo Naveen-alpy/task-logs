@@ -64,6 +64,10 @@
         border-color: var(--global--color-primary);
       }
     }
+    &.btn-xs {
+      @include fontSize(10px);
+      height: 34px;
+    }
     &.hvr_bg_white {
       &:hover {
         background-color: var(--global--color-white) !important;
@@ -74,6 +78,10 @@
       height: 42px;
       padding-left: 20px;
       padding-right: 20px;
+      &.btn-sm {
+        @include fontSize(11px);
+        height: 36px;
+      }
     }
     @include min(1200) {
       border-width: 1px;
@@ -81,6 +89,10 @@
       height: 40px;
       padding-left: 20px;
       padding-right: 20px;
+      &.btn-sm {
+        @include fontSize(10px);
+        height: 34px;
+      }
     }
     @include min(1600) {
       border-width: 2px;
@@ -88,6 +100,10 @@
       height: 44px;
       padding-left: 25px;
       padding-right: 25px;
+      &.btn-sm {
+        @include fontSize(13px);
+        height: 36px;
+      }
     }
   }
   &.full-width {
@@ -99,6 +115,27 @@
       padding-right: 15px;
       width: 100%;
     }
+  }
+}
+[class*="btns_icons_"] {
+  @include flex-align(vhCenter);
+  background-color: rgba($text-off,0.3);
+  @include border-radius(3px);
+  line-height: 1;
+  padding: 5px 10px;
+  svg {
+    fill: var(--global--color-base-text);
+    opacity: 0.6;
+    @include transition(all,ease,0.3s);
+  }
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
+  &.no-bg {
+    background-color: transparent !important;
+    padding: 0 !important;
   }
 }
 /*input[type="submit"],
@@ -152,6 +189,7 @@ button[type="submit"] {}*/
   @include border-radius(3px);
   @include flexbox-display(inline-flex);
   @include fontSize(13px);
+  @include justify-content(center);
   font-weight: $fw-500;
   height: 24px;
   padding: 0 10px;
@@ -160,7 +198,8 @@ button[type="submit"] {}*/
     background-color: var(--global--color-base-text);
     color: var(--global--color-white);
   }
-  &.on-hold {
+  &.on-hold,
+  &.e-com {
     background-color: rgba($hold,0.3);
     color: var(--global--color-hold);
   }
@@ -169,17 +208,20 @@ button[type="submit"] {}*/
     background-color: rgba($danger,0.3);
     color: var(--global--color-danger);
   }
-  &.working-on {
+  &.working-on,
+  &.lp {
     background-color: rgba($primary-color,0.2);
     color: var(--global--color-primary);
   }
   &.progress,
-  &.under-review {
+  &.under-review,
+  &.cro {
     background-color: rgba($progress,0.3);
     color: var(--global--color-progress);
   }
   &.complete,
-  &.high {
+  &.high,
+  &.cwp {
     background-color: rgba($success,0.3);
     color: var(--global--color-success);
   }
@@ -187,5 +229,9 @@ button[type="submit"] {}*/
   &.medium {
     background-color: rgba($text-off,0.3);
     color: var(--global--color-text-off);
+  }
+  &.wtg {
+    background-color: rgba($warning,0.3);
+    color: var(--global--color-warning);
   }
 }

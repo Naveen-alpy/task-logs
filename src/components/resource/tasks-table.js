@@ -112,7 +112,7 @@ export const ResourceTasksTable = (props) => {
             <p><strong>Other Assets</strong></p>
             <ul>
               <li>
-                <label className='vCenter' for="">
+                <label className='vCenter' htmlFor="">
                   <input type="checkbox" /> Mail forwarded.
                 </label>
               </li>

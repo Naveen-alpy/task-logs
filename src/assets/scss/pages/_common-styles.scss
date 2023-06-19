@@ -175,6 +175,25 @@
   text-transform: none !important;
 }
 // Font Sizes
+.fs-18 {
+  @include fontSize(12px);
+  p,
+  li {
+    font-size: inherit !important;
+  }
+  @include min(768) {
+    @include fontSize(12px);
+  }
+  @include min(1200) {
+    @include fontSize(13px);
+  }
+  @include min(1600) {
+    @include fontSize(16px);
+  }
+  @include min(1850) {
+    @include fontSize(18px);
+  }
+}
 .fs-20 {
   @include fontSize(13px);
   p,
@@ -259,8 +278,14 @@
 .m-b-0 {
   margin-bottom: 0 !important;
 }
+.m-b-5 {
+  margin-bottom: 5px !important;
+}
 .m-b-10 {
   margin-bottom: 10px !important;
+}
+.m-b-20 {
+  margin-bottom: 20px !important;
 }
 .m-b-30 {
   margin-bottom: 10px !important;
@@ -277,9 +302,15 @@
 .m-t-20 {
   margin-top: 20px !important;
 }
+.m-r-10 {
+  margin-right: 10px !important;
+}
 // Padding Spacing
 .p-b-0 {
   padding-bottom: 0 !important;
+}
+.p-b-5 {
+  padding-bottom: 5px !important;
 }
 .p-b-10 {
   padding-bottom: 10px !important;
@@ -342,6 +373,9 @@
       margin-bottom: calc(var(--bs-gutter-x) * 0.4);
       margin-top: calc(var(--bs-gutter-x) * 0.4);
     }
+    .input-holder {
+      margin-bottom: 0 !important;
+    }
   }
   .project_heading_widget {
     margin-bottom: 0;
@@ -389,6 +423,10 @@
     @include flex(0,0,50%);
     width: 50%;
   }
+  .tw-col-25 {
+    @include flex(0,0,25%);
+    width: 25%;
+  }
   .tw-col-40 {
     @include flex(0,0,40%);
     width: 40%;
@@ -396,6 +434,10 @@
   .tw-col-60 {
     @include flex(0,0,60%);
     width: 60%;
+  }
+  .tw-col-75 {
+    @include flex(0,0,75%);
+    width: 75%;
   }
 }
 .col-left {

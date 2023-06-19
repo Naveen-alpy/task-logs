@@ -1,0 +1,8 @@
+MongoDB Atlas
+Username: naveenv2b
+Password: iALr6QldnwZ7cExr
+
+IP Address
+0.0.0.0/0
+
+user, project, task

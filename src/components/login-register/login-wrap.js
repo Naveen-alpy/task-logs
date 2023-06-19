@@ -1,3 +1,4 @@
+
 const EntryLogin = () => {
   return (
     <>
@@ -7,12 +8,12 @@ const EntryLogin = () => {
       </header>
       <form>
         <div className="input-holder form-elements log_mail vCenter no-wrap">
-          <label className="placeholder_lab" for="en_mail">E-mail address</label>
+          <label className="placeholder_lab" htmlFor="en_mail">E-mail address</label>
           <input type="email" id="en_mail" className="input_field" />
-          <label for="en_mail" className="mailExt">@tasklogs.com</label>
+          <label htmlFor="en_mail" className="mailExt">@tasklogs.com</label>
         </div>
         <div className="input-holder">
-          <label className="placeholder_lab" for="en_pass">Password</label>
+          <label className="placeholder_lab" htmlFor="en_pass">Password</label>
           <input type="password" id="en_pass" className="form-elements" />
         </div>
         <div className="input-holder center project-btn-wrap">

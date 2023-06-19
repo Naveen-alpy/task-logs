@@ -1,21 +1,31 @@
-import { SvgIcon } from "@mui/material";
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
-import {ReactComponent as ticketIcon} from "../../assets/icons/ticket-filled.svg";
 import pImg1 from "../../assets/images/avatar/img-1.jpg";
 import pImg2 from "../../assets/images/avatar/img-2.jpg";
 import pImg3 from "../../assets/images/avatar/img-3.jpg";
 import pImg4 from "../../assets/images/avatar/img-4.jpg";
 import { useState } from 'react';
 import { ExpandMoreOutlined } from '@mui/icons-material';
+import { PencileditFilled, TicketIcon } from "../utils/icons";
+import { TaskProjectPopupWrap } from '../utils/task-project-popup';
 
 export const ResourceTasksTableTL = (props) => {
-  const [classVal, setClassVal] = useState("Not Started")
+  // Show and Hide Popup
+  const [showPopOver, setShowPopOver] = useState(false);
+  const editPopUp = () => {
+    setShowPopOver(true);
+  }
+  const hidePopup = () => {
+    setShowPopOver(false);
+  }
+  const [classVal, setClassVal] = useState("Not Started");
+  const [pointerEvents, setPointerEvents] = useState(false);
 
   const updateStatus = (status,id) => {
     const updatedTabledata = tableData.map(el => {return el.id === id ? {...el,status} : el})
     setTableData(updatedTabledata)
     setClassVal(status)
+    setPointerEvents(true)
   }
   
   const tableHeads = [
@@ -116,8 +126,18 @@ export const ResourceTasksTableTL = (props) => {
   ])
   const ExpandedComponent = ({ data }) =>
     <section className='expanded_wrapper'>
-      <button type='button' className="btn_tasks primary">Start</button>
-      <ul className='ul-rows dFlex'>
+      <div className='tasks_assets'>
+        <nav className='tasks_btn_wrap'>
+          <button type='button' className={`btn_tasks ${classVal.replace(/ +/g, '-').toLowerCase()}`}>{classVal} <ExpandMoreOutlined fontSize='small' /></button>
+          <ul>
+            <li onClick={() => {updateStatus("Complete",data.id)}}>Complete</li>
+            <li onClick={() => {updateStatus("Pending",data.id)}}>Pending</li>
+            <li onClick={() => {updateStatus("Working On",data.id)}}>Working On</li>
+            <li onClick={() => {updateStatus("On Hold",data.id)}}>On Hold</li>
+          </ul>
+        </nav>
+      </div>
+      <ul className={`ul-rows dFlex tsks_dtails${pointerEvents ? " rm_fade" : ""}`} style={{pointerEvents: pointerEvents ? 'auto' : 'none'}}>
         <li>
           <div className='tasks_assets'>
             <p><strong>Details</strong></p>
@@ -132,7 +152,7 @@ export const ResourceTasksTableTL = (props) => {
             <p><strong>Other Assets</strong></p>
             <ul>
               <li>
-                <label className='vCenter' for="">
+                <label className='vCenter' htmlFor="">
                   <input type="checkbox" /> Mail forwarded.
                 </label>
               </li>
@@ -155,7 +175,7 @@ export const ResourceTasksTableTL = (props) => {
             <ul>
               <li>
                 <Link className='vCenter' to={data.tmNtTask} target='_blank' rel='nofollow noopener'>
-                  <SvgIcon component={ticketIcon} inheritViewBox sx={{fontSize:18}} />
+                  <TicketIcon size="18px" />
                   Update your taks.
                 </Link>
               </li>
@@ -163,21 +183,15 @@ export const ResourceTasksTableTL = (props) => {
           </div>
         </li>
         <li>
-          <div className='tasks_assets'>
-            <nav className='tasks_btn_wrap'>
-              <button type='button' className={`btn_tasks ${classVal.replace(/ +/g, '-').toLowerCase()}`}>{classVal} <ExpandMoreOutlined fontSize='small' /></button>
-              <ul>
-                <li onClick={() => {updateStatus("Complete",data.id)}}>Complete</li>
-                <li onClick={() => {updateStatus("Pending",data.id)}}>Pending</li>
-                <li onClick={() => {updateStatus("Working On",data.id)}}>Working On</li>
-                <li onClick={() => {updateStatus("On Hold",data.id)}}>On Hold</li>
-              </ul>
-            </nav>
+          <div className="tasks_assets">
+            <button type="button" className="btns_icons_edit" onClick={() => {editPopUp("task")}}>
+              <PencileditFilled size="22px" />
+            </button>
           </div>
         </li>
       </ul>
     </section>;
-  return (
+  return (<>
     <DataTable 
       columns={tableHeads}
       data={tableData}
@@ -189,5 +203,6 @@ export const ResourceTasksTableTL = (props) => {
       fixedHeader
       fixedHeaderScrollHeight='400px'
     />
-  )
+    {showPopOver && <TaskProjectPopupWrap hidePopup={() => hidePopup()} type={"task"} /> }
+  </>)
 }

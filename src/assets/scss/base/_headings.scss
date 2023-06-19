@@ -126,10 +126,10 @@ h6 {
     padding: 0;
     text-transform: uppercase;
     &.size-xxs {
-      @include fontSize(13px);
+      @include fontSize(15px);
     }
     &.size-xs {
-      @include fontSize(14px);
+      @include fontSize(16px);
     }
     &.size-sm {
       @include fontSize(18px);

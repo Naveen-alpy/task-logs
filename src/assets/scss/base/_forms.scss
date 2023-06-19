@@ -26,11 +26,12 @@ form {
     @include fontSize(15px);
   }
 }
+.tp_label,
 .label,
 .form-elements,
 textarea,
 select {
-  @include fontSize(14px);
+  @include fontSize(13px);
   @include min(1200) {
     @include fontSize(14px);
   }
@@ -170,26 +171,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
   }
   .error {
-    background-color: var(--global--color-red);
-    @include border-radius(3px);
+    background-color: var(--global--color-hold);
+    @include border-radius(2px);
+    bottom: 35px;
     color: var(--global--color-white);
     display: inline-block;
-    @include fontSize(14px);
-    left: 0;
+    @include fontSize(10px);
     line-height: 1;
-    padding: 2px 3px;
+    padding: 4px 8px;
     position: absolute;
-    top: -28px;
-    &:after {
-      border-bottom: none;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 5px solid var(--global--color-red);
-      bottom: -5px;
-      content: "";
-      left: 10px;
-      position: absolute;
-    }
+    right: 10px;
+    width: auto;
+    z-index: 2;
   }
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -502,7 +495,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     @include border-radius(3px);
     height: 36px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 25px;
   }
 }
 .fx-placeholder {

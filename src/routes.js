@@ -12,6 +12,7 @@ import { TeamLeadProjectSummary } from './components/team-lead/project-lists-tl'
 import { UserProfile } from './components/users';
 import { FtpLogins } from './components/ftp';
 import { SingleProjectPage } from './components/team-lead/single-project';
+import { Dashboard } from './components/dashboard';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
         <Routes>
           <Route path='/' element={<TemplateWithHeader />}>
             <Route index element={<Home />} className="home" />
+            <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/resources' element={<OtherResources />} />
             <Route path='/team-lead' element={<TeamLead />} />
             <Route path='/tl-tasks-summary' element={<TeamLeadTasksSummary />} />
@@ -29,7 +31,7 @@ const AppRoutes = () => {
             <Route path='/login-details' element={<FtpLogins />} />
           </Route>
           <Route path='/' element={<TemplateWithoutHeader />}>
-            <Route index path='/dashboard' element={<LoginRegister />} />
+            <Route index path='/dashboarded' element={<LoginRegister />} />
           </Route>
           <Route path='/' element={<TemplateWithoutHeadFoot />}>
             <Route index path='/app-entry' element={<LoginRegister />} />

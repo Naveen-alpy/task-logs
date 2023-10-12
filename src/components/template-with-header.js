@@ -38,7 +38,7 @@ export const TemplateWithHeader = () => {
         </nav>
         <nav className="main_menu">
           <ul>
-            <li><Link to="/"><HomeIcon size="16px" /><span className="title">Dashboard</span></Link></li>
+            <li><Link to="/dashboard"><HomeIcon size="16px" /><span className="title">Dashboard</span></Link></li>
             <li><Link to="/resources"><PmIcon size="16px" /><span className="title">Other Resources</span></Link></li>
             <li><Link to="/team-lead"><TlIcon size="16px" /><span className="title">Team Leads</span></Link></li>
             <li><Link to="/tl-tasks-summary"><TicketIcon size="16px" /><span className="title">TL Tasks Summary</span></Link></li>

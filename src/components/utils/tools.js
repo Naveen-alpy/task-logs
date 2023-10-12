@@ -4,6 +4,7 @@ import project_logo from "../../logo.svg";
 import project_fav from "../../favIcon.svg";
 import SVG from "react-inlinesvg";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const ProjectLogo = (props) => {
   const template = <figure className="logo"><SVG src={project_logo} /></figure>
@@ -29,4 +30,15 @@ export const ProjectLogo = (props) => {
       return template
     }
   }
+}
+
+export const ToastSuccess = (msg) => {
+  toast.success(msg, {
+    position: toast.POSITION.TOP_CENTER
+  })
+}
+export const ToastError = (msg) => {
+  toast.error(msg, {
+    position: toast.POSITION.TOP_CENTER
+  })
 }

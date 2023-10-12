@@ -5,6 +5,7 @@ import { EmployeeDepartment, EmployeeRole, EmployeeTeam } from "../utils/select-
 const EntryRegister = () => {
   const {control, register, watch, formState: {errors}, handleSubmit} = useForm({
     defaultValues:{
+      usrid: "",
       empName: "",
       empLstName: "",
       empEmail: "",
@@ -13,13 +14,26 @@ const EntryRegister = () => {
       empDept: "",
       empTeam: "",
       empDob : new Date(),
+      empImage: "",
       confirm_userName: "",
-      creatPass: "",
       updatePass: ""
     }
   });
+  const onSubmit = (data) => {
+    let formdata = new FormData();
+    console.log(data);
+    let requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch("https://asia-south1.gcp.data.mongodb-api.com/app/tasklougeservices-dogac/endpoint/user_register", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
   const getUserID = watch(['confirm_userName'])
-  const onSubmit = data => console.log(data);
+  //const onSubmit = data => console.log(data);
   
   return (
     <>

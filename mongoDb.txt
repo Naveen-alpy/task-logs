@@ -2,6 +2,8 @@ MongoDB Atlas
 Username: naveenv2b
 Password: iALr6QldnwZ7cExr
 
+Connections Strings: mongodb+srv://naveenv2b:iALr6QldnwZ7cExr@tasklouge.sdkztop.mongodb.net/
+
 IP Address
 0.0.0.0/0
 

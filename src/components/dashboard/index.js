@@ -6,7 +6,7 @@ export const Dashboard = () => {
       </header>
     </section>
     <section className="white-box">
-      Welcome to your Dashboard
+      Welcome to Dashboard
     </section>
   </>)
 }

@@ -19,6 +19,9 @@ const AppRoutes = () => {
     <BrowserRouter>
       <section className='project_outer_container'>
         <Routes>
+          <Route path='/' element={<TemplateWithoutHeadFoot />}>
+            <Route index element={<LoginRegister />} />
+          </Route>
           <Route path='/' element={<TemplateWithHeader />}>
             <Route index element={<Home />} className="home" />
             <Route path='/dashboard' element={<Dashboard />} />
